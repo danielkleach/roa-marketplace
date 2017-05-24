@@ -46,6 +46,7 @@ class ItemController extends Controller
     {
         return $this->item->create([
             'name' => $request->name,
+            'description' => $request->description,
             'image' => $request->image,
             'rarity' => $request->rarity
         ]);
