@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Location;
-use Illuminate\Http\Request;
+use App\Http\Requests\LocationRequest;
 
 class LocationController extends Controller
 {
@@ -39,10 +39,10 @@ class LocationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param LocationRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LocationRequest $request)
     {
         return $this->location->create([
             'name' => $request->name,
@@ -76,11 +76,11 @@ class LocationController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param LocationRequest $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(LocationRequest $request, $id)
     {
         $location = $this->location->findOrFail($id);
 
