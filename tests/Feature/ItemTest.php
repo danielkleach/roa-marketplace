@@ -12,7 +12,9 @@ class ItemTest extends TestCase
 
     public function test_user_can_view_all_items()
     {
-        $items = factory(Item::class, 5)->create();
+        $items = factory(Item::class, 5)->create([
+            'name' => 'New Item'
+        ]);
 
         $response = $this->get('/items');
 
