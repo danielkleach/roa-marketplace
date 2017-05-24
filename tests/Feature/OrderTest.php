@@ -13,7 +13,13 @@ class OrderTest extends TestCase
 
     public function test_user_can_view_all_orders()
     {
-        $orders = factory(Order::class, 5)->create();
+        $item = factory(Item::class)->create([
+            'name' => 'New Item'
+        ]);
+
+        $orders = factory(Order::class, 5)->create([
+            'item_id' => $item->id
+        ]);
 
         $response = $this->get('/orders');
 
@@ -28,7 +34,9 @@ class OrderTest extends TestCase
 
     public function test_user_can_view_an_order()
     {
-        $item = factory(Item::class)->create();
+        $item = factory(Item::class)->create([
+            'name' => 'New Item'
+        ]);
 
         $order = factory(Order::class)->create([
                 'item_id' => $item->id,
