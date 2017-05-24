@@ -14,4 +14,13 @@ class Profile extends Model
     protected $fillable = [
         'user_id', 'character_name', 'race'
     ];
+
+    /*********************************************
+     * Relationships
+     *********************************************/
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
