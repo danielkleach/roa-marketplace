@@ -18,6 +18,10 @@ class ItemRequest extends Request
                         'required',
                         'string',
                     ],
+                    'description' => [
+                        'required',
+                        'string'
+                    ],
                     'image' => [
                         'required',
                         'string'
@@ -33,6 +37,11 @@ class ItemRequest extends Request
                         'sometimes',
                         'required',
                         'string',
+                    ],
+                    'description' => [
+                        'sometimes',
+                        'required',
+                        'string'
                     ],
                     'image' => [
                         'sometimes',
