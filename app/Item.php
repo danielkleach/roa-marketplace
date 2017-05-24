@@ -14,4 +14,13 @@ class Item extends Model
     protected $fillable = [
         'name', 'description', 'image', 'rarity'
     ];
+
+    /*********************************************
+     * Relationships
+     *********************************************/
+
+    public function order()
+    {
+        return $this->hasMany('App\Order');
+    }
 }
