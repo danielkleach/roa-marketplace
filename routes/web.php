@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('users')->group(function () {
+    Route::get('/', 'UserController@index');
+    Route::get('/{id}', 'UserController@show');
+});
+
+Route::prefix('profiles')->group(function () {
+    Route::post('/', 'ProfileController@store');
+    Route::patch('/{id}', 'ProfileController@update');
 });
