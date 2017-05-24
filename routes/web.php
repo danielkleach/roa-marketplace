@@ -11,12 +11,6 @@
 |
 */
 
-Route::prefix('users')->group(function () {
-    Route::get('/', 'UserController@index');
-    Route::get('/{id}', 'UserController@show');
-});
-
-Route::prefix('profiles')->group(function () {
-    Route::post('/', 'ProfileController@store');
-    Route::patch('/{id}', 'ProfileController@update');
-});
+Route::resource('users', 'UserController');
+Route::resource('profiles', 'ProfileController');
+Route::resource('items', 'ItemController');

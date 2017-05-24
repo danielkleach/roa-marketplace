@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\Profiler\Profile;
+use App\Item;
+use App\Http\Requests\ItemRequest;
 
-class ProfileController extends Controller
+class ItemController extends Controller
 {
-    protected $profile;
+    protected $item;
 
-    public function __construct(Profile $profile)
+    public function __construct(Item $item)
     {
-        $this->profile = $profile;
+        $this->item = $item;
     }
 
     /**
@@ -21,7 +21,9 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+        $items = $this->item->all();
+
+        return view('items.index', ['items' => $items]);
     }
 
     /**
@@ -37,16 +39,15 @@ class ProfileController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param $userId
+     * @param ItemRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $userId)
+    public function store(ItemRequest $request)
     {
-        return $this->profile->create([
-            'user_id' => $userId,
-            'character_name' => $request->character_name,
-            'race' => $request->race
+        return $this->item->create([
+            'name' => $request->name,
+            'image' => $request->image,
+            'rarity' => $request->rarity
         ]);
     }
 
@@ -58,7 +59,9 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        //
+        $item = $this->item->findOrFail($id);
+
+        return view('items.show', ['item' => $item]);
     }
 
     /**
@@ -75,18 +78,15 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param ItemRequest $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ItemRequest $request, $id)
     {
-        $profile = $this->profile->findOrFail($id);
+        $item = $this->item->findOrFail($id);
 
-        return $profile->update([
-            'character_name' => $request->character_name,
-            'race' => $request->race
-        ]);
+        return $item->update($request->all());
     }
 
     /**
