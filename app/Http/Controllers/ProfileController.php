@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ProfileRequest;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class ProfileController extends Controller
@@ -37,11 +37,11 @@ class ProfileController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param ProfileRequest $request
      * @param $userId
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $userId)
+    public function store(ProfileRequest $request, $userId)
     {
         return $this->profile->create([
             'user_id' => $userId,
@@ -75,11 +75,11 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param ProfileRequest $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProfileRequest $request, $id)
     {
         $profile = $this->profile->findOrFail($id);
 
