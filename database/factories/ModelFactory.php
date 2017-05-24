@@ -42,6 +42,7 @@ $factory->define(App\Item::class, function (Faker\Generator $faker) {
 
     return [
         'name' => $faker->unique()->name,
+        'description' => $faker->sentence(15),
         'image' => $faker->imageUrl(),
         'rarity' => $faker->randomElement(['Common', 'Rare', 'Ultra-Rare', 'Uncommon']),
     ];
