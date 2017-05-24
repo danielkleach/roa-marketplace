@@ -35,4 +35,9 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Profile');
     }
+
+    public function order()
+    {
+        return $this->hasMany('App\Order');
+    }
 }
