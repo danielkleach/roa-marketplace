@@ -14,4 +14,13 @@ class Order extends Model
     protected $fillable = [
         'user_id', 'item_id', 'type', 'price'
     ];
+
+    /*********************************************
+     * Relationships
+     *********************************************/
+
+    public function item()
+    {
+        return $this->belongsTo('App\Item');
+    }
 }

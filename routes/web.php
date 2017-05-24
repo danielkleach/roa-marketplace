@@ -15,3 +15,4 @@ Route::resource('users', 'UserController');
 Route::resource('profiles', 'ProfileController');
 Route::resource('items', 'ItemController');
 Route::resource('locations', 'LocationController');
+Route::resource('orders', 'OrderController');
