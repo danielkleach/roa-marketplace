@@ -20,7 +20,8 @@
 <body>
 <div>
     <div>
-        <h2>{{ $user->email }}</h2>
+        <h2>{{ $profile->character_name }}</h2>
+        <p>{{ $profile->race }}</p>
     </div>
 </div>
 </body>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cuzzle</title>
+    <title>Marketplace</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <style>
         html, body {
@@ -19,9 +19,12 @@
 </head>
 <body>
 <div>
-    <div>
-        <h2>{{ $user->email }}</h2>
-    </div>
+    @foreach ($profiles as $profile)
+        <div>
+            <h2>{{ $profile->character_name }}</h2>
+            <p>{{ $profile->race }}</p>
+        </div>
+    @endforeach
 </div>
 </body>
 </html>

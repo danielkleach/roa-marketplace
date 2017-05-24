@@ -22,8 +22,6 @@
     @foreach ($users as $user)
         <div>
             <h2>{{ $user->email }}</h2>
-            <p>{{ $user->profile->character_name }}</p>
-            <p>{{ $user->profile->race }}</p>
         </div>
     @endforeach
 </div>
