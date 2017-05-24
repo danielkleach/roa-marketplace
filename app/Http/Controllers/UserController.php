@@ -21,7 +21,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = $this->user->whereHas('profile')->get();
+        $users = $this->user->all();
 
         return view('users.index', ['users' => $users]);
     }
@@ -55,7 +55,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = $this->user->whereHas('profile')->findOrFail($id);
+        $user = $this->user->findOrFail($id);
 
         return view('users.show', ['user' => $user]);
     }

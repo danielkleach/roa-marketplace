@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileRequest;
-use Symfony\Component\HttpKernel\Profiler\Profile;
+use App\Profile;
 
 class ProfileController extends Controller
 {
@@ -21,7 +21,9 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+        $profiles = $this->profile->all();
+
+        return view('profiles.index', ['profiles' => $profiles]);
     }
 
     /**
@@ -58,7 +60,9 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        //
+        $profile = $this->profile->findOrFail($id);
+
+        return view('profiles.show', ['profile' => $profile]);
     }
 
     /**
