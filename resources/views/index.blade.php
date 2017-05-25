@@ -3,22 +3,8 @@
 @section('content')
     <main>
         <div class="row">
-            <div class="col-md-12">
-                <h3>{{ $profile->character_name }}</h3>
-                <h4>{{ $profile->race }}</h4>
-                <div class="input-group">
-                    <input id="contact-link" type="text" value="/tell {{ $profile->character_name }}">
-                    <span class="input-group-button">
-                         <button class="btn btn-blood" type="button" data-clipboard-target="#contact-link">
-                            <i class="glyphicon glyphicon-clipboard"></i>
-                        </button>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-md-6">
-                <h4 class="text-center">Orders</h4>
+                <h4 class="text-center">Latest Sell Orders</h4>
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <tr>
@@ -28,7 +14,7 @@
                             <th>Price Each</th>
                             <th>Created</th>
                         </tr>
-                        @foreach ($sellOrders as $order)
+                        @foreach ($latestSellOrders as $order)
                             <tr>
                                 <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->item->name }}</a></td>
                                 <td><a href="{{ route('profiles.show', $order->user->id) }}">{{ $order->user->profile->character_name }}</a></td>
@@ -48,7 +34,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <h4 class="text-center">Orders</h4>
+                <h4 class="text-center">Latest Buy Orders</h4>
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <tr>
@@ -58,10 +44,10 @@
                             <th>Price Each</th>
                             <th>Created</th>
                         </tr>
-                        @foreach ($buyOrders as $order)
+                        @foreach ($latestBuyOrders as $order)
                             <tr>
                                 <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->item->name }}</a></td>
-                                <td><a href="{{ route('profiles.show', $order->user->id) }}">{{ $order->user->profile->character_name }}</a></td>
+                                <td><a href="{{ route('users.show', $order->user->id) }}">{{ $order->user->profile->character_name }}</a></td>
                                 <td class="text-right">{{ number_format($order->quantity) }}</td>
                                 <td class="text-right">{{ number_format($order->price) }}G</td>
                                 <td>{{ $order->formattedDate }}</td>
@@ -79,12 +65,4 @@
             </div>
         </div>
     </main>
-@endsection
-
-@section('scripts')
-    <script src="/js/clipboard.min.js"></script>
-    <script src="/js/clipboard-action.js"></script>
-    <script>
-        new Clipboard('.link');
-    </script>
 @endsection
