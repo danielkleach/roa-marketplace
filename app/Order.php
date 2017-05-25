@@ -28,4 +28,13 @@ class Order extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    /*********************************************
+     * Methods
+     *********************************************/
+
+    public function getFormattedDateAttribute()
+    {
+        return $this->created_at->format('F j, Y');
+    }
 }
