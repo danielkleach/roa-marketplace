@@ -17,8 +17,9 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('item_id')->unsigned();
-            $table->enum('type', ['Buy', 'Sell', 'Trade']);
-            $table->mediumInteger('price')->unsigned()->nullable();
+            $table->enum('type', ['Buy', 'Sell']);
+            $table->integer('quantity')->unsigned();
+            $table->integer('price')->unsigned()->nullable();
 
             $table->timestamps();
             $table->softDeletes();
