@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileRequest;
+use App\Order;
 use App\Profile;
+use App\Http\Requests\ProfileRequest;
 
 class ProfileController extends Controller
 {
     protected $profile;
+    protected $order;
 
-    public function __construct(Profile $profile)
+    public function __construct(Profile $profile, Order $order)
     {
         $this->profile = $profile;
+        $this->order = $order;
     }
 
     /**
@@ -60,9 +63,21 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        $profile = $this->profile->findOrFail($id);
+        $profile = $this->profile->with('user')->findOrFail($id);
 
-        return view('profiles.show', ['profile' => $profile]);
+        $sellOrders = $this->order->with('item')
+            ->where('type', 'sell')
+            ->where('user_id', $profile->user->id)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        $buyOrders = $this->order->with('item')
+            ->where('type', 'buy')
+            ->where('user_id', $profile->user->id)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('profiles.show', compact('profile', 'sellOrders', 'buyOrders'));
     }
 
     /**
