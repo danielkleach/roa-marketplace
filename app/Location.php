@@ -14,4 +14,13 @@ class Location extends Model
     protected $fillable = [
         'name'
     ];
+
+    /*********************************************
+     * Relationships
+     *********************************************/
+
+    public function order()
+    {
+        return $this->hasMany('App\Order');
+    }
 }
