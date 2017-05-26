@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('item_id')->unsigned();
+            $table->integer('location_id')->unsigned();
             $table->enum('type', ['Buy', 'Sell']);
             $table->integer('quantity')->unsigned();
             $table->integer('price')->unsigned()->nullable();
@@ -26,6 +27,7 @@ class CreateOrdersTable extends Migration
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('item_id')->references('id')->on('items');
+            $table->foreign('location_id')->references('id')->on('locations');
         });
     }
 
