@@ -1,5 +1,4 @@
 @include('layout.partials.header')
-@include('layout.partials.search')
 
 @yield('content')
 
