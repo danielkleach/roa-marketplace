@@ -6,7 +6,7 @@
                     <li class="active"><a href="{{ route('home.index') }}">Home</a></li>
                     <li><a href="#">Buy</a></li>
                     <li><a href="#">Sell</a></li>
-                    <li><a href="#">Item Request</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </div>
             @include('layout.partials.search')
