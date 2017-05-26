@@ -18,7 +18,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h4 class="text-center">Orders</h4>
+                <h4 class="text-center">Sell Orders</h4>
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <tr>
@@ -28,15 +28,21 @@
                             <th>Price Each</th>
                             <th>Created</th>
                         </tr>
-                        @foreach ($sellOrders as $order)
+                        @if (!empty($sellOrders))
+                            @foreach ($sellOrders as $order)
+                                <tr>
+                                    <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->item->name }}</a></td>
+                                    <td><a href="{{ route('profiles.show', $order->user->id) }}">{{ $order->user->profile->character_name }}</a></td>
+                                    <td class="text-right">{{ number_format($order->quantity) }}</td>
+                                    <td class="text-right">{{ number_format($order->price) }}G</td>
+                                    <td>{{ $order->formattedDate }}</td>
+                                </tr>
+                            @endforeach
+                        @else
                             <tr>
-                                <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->item->name }}</a></td>
-                                <td><a href="{{ route('profiles.show', $order->user->id) }}">{{ $order->user->profile->character_name }}</a></td>
-                                <td class="text-right">{{ number_format($order->quantity) }}</td>
-                                <td class="text-right">{{ number_format($order->price) }}G</td>
-                                <td>{{ $order->formattedDate }}</td>
+                                <td>This user has no active sell orders.</td>
                             </tr>
-                        @endforeach
+                        @endif
                         <tr>
                             <th>Item</th>
                             <th>User</th>
@@ -48,7 +54,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <h4 class="text-center">Orders</h4>
+                <h4 class="text-center">Buy Orders</h4>
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <tr>
@@ -58,15 +64,21 @@
                             <th>Price Each</th>
                             <th>Created</th>
                         </tr>
-                        @foreach ($buyOrders as $order)
+                        @if (!empty($buyOrders))
+                            @foreach ($buyOrders as $order)
+                                <tr>
+                                    <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->item->name }}</a></td>
+                                    <td><a href="{{ route('profiles.show', $order->user->id) }}">{{ $order->user->profile->character_name }}</a></td>
+                                    <td class="text-right">{{ number_format($order->quantity) }}</td>
+                                    <td class="text-right">{{ number_format($order->price) }}G</td>
+                                    <td>{{ $order->formattedDate }}</td>
+                                </tr>
+                            @endforeach
+                        @else
                             <tr>
-                                <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->item->name }}</a></td>
-                                <td><a href="{{ route('profiles.show', $order->user->id) }}">{{ $order->user->profile->character_name }}</a></td>
-                                <td class="text-right">{{ number_format($order->quantity) }}</td>
-                                <td class="text-right">{{ number_format($order->price) }}G</td>
-                                <td>{{ $order->formattedDate }}</td>
+                                <td>This user has no active buy orders.</td>
                             </tr>
-                        @endforeach
+                        @endif
                         <tr>
                             <th>Item</th>
                             <th>User</th>

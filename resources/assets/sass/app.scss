@@ -8,15 +8,20 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+html {
+    background: #000000;
+}
+
 body {
-    background-color: #ffffff;
+    background: url("bg.jpg") no-repeat top;
+    background-size:100% 100vh;
     color: #222222;
     font-size: 12px;
     font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 60px;
     letter-spacing: 5px;
     text-transform: uppercase;
 }
@@ -54,28 +59,32 @@ a:hover {
     color: #911111;
 }
 
+table {
+    background-color: #ffffff;
+}
+
 table tr th {
     font-weight: bold;
 }
 
 header {
-    margin: 40px 0 50px;
+    margin: 60px 0;
 }
 
 header h1, header h2 {
     font-family: 'Metamorphous', cursive;
-    color: #D11818;
+    color: #dddddd;
 }
 
 main {
-    margin-top: 40px;
+    padding-top: 60px;
 }
 
 footer {
     background-color: #911111;
     color: #ffffff;
     padding: 20px;
-    margin-top: 40px;
+    margin-top: 80px;
     display: flex;
 }
 
@@ -121,8 +130,12 @@ footer .copyright {
 
 .btn-blood {
     color: #bbbbbb;
-    background: none;
+    background: #ffffff;
     border: 1px solid #ccd0d2;
+}
+
+.text-white {
+    color: #ffffff;
 }
 
 .btn-blood:hover {

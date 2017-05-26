@@ -12,5 +12,6 @@
     <div class="wrapper">
         <header>
             <h1 class="text-center">Rise of Agon</h1>
+            {{--<img class="logo" src="/images/logo.png">--}}
             <h2 class="text-center">Marketplace</h2>
         </header>

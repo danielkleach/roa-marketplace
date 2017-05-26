@@ -4,7 +4,7 @@
     <main>
         <div class="row">
             <div class="col-md-6">
-                <h4 class="text-center">Latest Sell Orders</h4>
+                <h4 class="text-center text-white">Latest Sell Orders</h4>
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <tr>
@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <h4 class="text-center">Latest Buy Orders</h4>
+                <h4 class="text-center text-white">Latest Buy Orders</h4>
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <tr>
