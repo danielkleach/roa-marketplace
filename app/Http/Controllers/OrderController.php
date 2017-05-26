@@ -64,7 +64,19 @@ class OrderController extends Controller
     {
         $order = $this->order->whereHas('item')->findOrFail($id);
 
-        return view('orders.show', ['order' => $order]);
+        $sellOrders = $this->order
+            ->whereHas('item')
+            ->where('type', 'Sell')
+            ->where('user_id', $order->user_id)
+            ->get();
+
+        $buyOrders = $this->order
+            ->whereHas('item')
+            ->where('type', 'Buy')
+            ->where('user_id', $order->user_id)
+            ->get();
+
+        return view('orders.show', compact('order', 'sellOrders', 'buyOrders'));
     }
 
     /**

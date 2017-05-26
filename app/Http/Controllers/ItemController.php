@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Item;
 use App\Http\Requests\ItemRequest;
+use App\Order;
 
 class ItemController extends Controller
 {
-    protected $item;
+    protected $item, $order;
 
-    public function __construct(Item $item)
+    public function __construct(Item $item, Order $order)
     {
         $this->item = $item;
+        $this->order = $order;
     }
 
     /**
@@ -21,7 +23,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $items = $this->item->all();
+        $items = $this->item->with('order.');
 
         return view('items.index', ['items' => $items]);
     }
@@ -62,7 +64,22 @@ class ItemController extends Controller
     {
         $item = $this->item->findOrFail($id);
 
-        return view('items.show', ['item' => $item]);
+        $sellOrders = $this->order
+            ->with('item', 'user.profile', 'location')
+            ->where('type', 'sell')
+            ->where('item_id', $item->id)
+            ->orderBy('price', 'asc')
+            ->limit(10)
+            ->get();
+
+        $buyOrders = $this->order
+            ->with('item', 'user.profile', 'location')
+            ->where('type', 'buy')
+            ->orderBy('created_at', 'desc')
+            ->limit(10)
+            ->get();
+
+        return view('items.show', compact('item', 'sellOrders', 'buyOrders'));
     }
 
     /**

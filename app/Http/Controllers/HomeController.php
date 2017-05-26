@@ -6,6 +6,13 @@ use App\Order;
 
 class HomeController extends Controller
 {
+    protected $order;
+
+    public function __construct(Order $order)
+    {
+        $this->order = $order;
+    }
+
     /**
      * Display the homepage.
      *
@@ -13,8 +20,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $latestSellOrders = Order::with('item', 'user.profile')->where('type', 'sell')->orderBy('created_at', 'desc')->limit(10)->get();
-        $latestBuyOrders = Order::with('item', 'user.profile')->where('type', 'buy')->orderBy('created_at', 'desc')->limit(10)->get();
+        $latestSellOrders = $this->order
+            ->with('item', 'user.profile', 'location')
+            ->where('type', 'sell')
+            ->orderBy('created_at', 'desc')
+            ->limit(10)
+            ->get();
+
+        $latestBuyOrders = $this->order
+            ->with('item', 'user.profile', 'location')
+            ->where('type', 'buy')
+            ->orderBy('created_at', 'desc')
+            ->limit(10)
+            ->get();
 
         return view('index', compact('latestSellOrders', 'latestBuyOrders'));
     }
