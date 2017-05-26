@@ -40,6 +40,6 @@ class Order extends Model
 
     public function getFormattedDateAttribute()
     {
-        return $this->created_at->format('F j, Y');
+        return $this->created_at->diffForHumans();
     }
 }
