@@ -1,30 +1,87 @@
-<!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Marketplace</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-    <style>
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 100;
-            height: 100vh;
-            margin: 0;
-        }
-    </style>
-</head>
-<body>
-<div>
-    <div>
-        <h2>{{ $item->name }}</h2>
-        <p>{{ $item->description }}</p>
-        <p>{{ $item->image }}</p>
-        <p>{{ $item->rarity }}</p>
-    </div>
-</div>
-</body>
-</html>
+@extends('layout.master')
+
+@section('content')
+    <main>
+        <div class="row">
+            <div class="col-md-6 info-block">
+                <h3 class="text-white">{{ $item->name }}</h3>
+                <p class="text-white">{{ $item->description }}</p>
+                <p class="text-white">Rarity: {{ $item->rarity }} </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-white">Sell Orders</h4>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Item</th>
+                            <th>Location</th>
+                            <th>Quantity</th>
+                            <th>Price Each</th>
+                            <th>Created</th>
+                        </tr>
+                        @if (count($sellOrders))
+                            @foreach ($sellOrders as $order)
+                                <tr>
+                                    <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->item->name }}</a></td>
+                                    <td>{{ $order->location->name }}</td>
+                                    <td class="text-right">{{ number_format($order->quantity) }}</td>
+                                    <td class="text-right">{{ number_format($order->price) }}G</td>
+                                    <td>{{ $order->formattedDate }}</td>
+                                </tr>
+                            @endforeach
+                        @else
+                            <tr>
+                                <td class="text-center" colspan="5">This item has no active sell orders.</td>
+                            </tr>
+                        @endif
+                        <tr>
+                            <th>Item</th>
+                            <th>Location</th>
+                            <th>Quantity</th>
+                            <th>Price Each</th>
+                            <th>Created</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <h4 class="text-white">Buy Orders</h4>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Item</th>
+                            <th>Location</th>
+                            <th>Quantity</th>
+                            <th>Price Each</th>
+                            <th>Created</th>
+                        </tr>
+                        @if (count($buyOrders))
+                            @foreach ($buyOrders as $order)
+                                <tr>
+                                    <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->item->name }}</a></td>
+                                    <td>{{ $order->location->name }}</td>
+                                    <td class="text-right">{{ number_format($order->quantity) }}</td>
+                                    <td class="text-right">{{ number_format($order->price) }}G</td>
+                                    <td>{{ $order->formattedDate }}</td>
+                                </tr>
+                            @endforeach
+                        @else
+                            <tr>
+                                <td class="text-center" colspan="5">This item has no active buy orders.</td>
+                            </tr>
+                        @endif
+                        <tr>
+                            <th>Item</th>
+                            <th>Location</th>
+                            <th>Quantity</th>
+                            <th>Price Each</th>
+                            <th>Created</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+@endsection
