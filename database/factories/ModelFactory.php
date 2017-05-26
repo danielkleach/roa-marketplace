@@ -50,9 +50,10 @@ $factory->define(App\Order::class, function (Faker\Generator $faker) {
 
     return [
         'item_id' => $faker->numberBetween(1, 10),
+        'location_id' => $faker->numberBetween(1, 6),
         'type' => $faker->randomElement(['Buy', 'Sell']),
         'quantity' => $faker->numberBetween(1, 1000),
-        'price' => $faker->numberBetween(10, 50000),
+        'price' => $faker->numberBetween(10, 200),
     ];
 });
 
