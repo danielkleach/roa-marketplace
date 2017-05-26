@@ -13,8 +13,7 @@ html {
 }
 
 body {
-    background: url("bg.jpg") no-repeat top;
-    background-size:100% 100vh;
+    background: url("bg.png") no-repeat center 50px fixed;
     color: #222222;
     font-size: 12px;
     font-family: 'Open Sans', sans-serif;
@@ -61,6 +60,7 @@ a:hover {
 
 table {
     background-color: #ffffff;
+    border-radius: 3px;
 }
 
 table tr th {
@@ -83,8 +83,8 @@ main {
 footer {
     background-color: #911111;
     color: #ffffff;
-    padding: 20px;
-    margin-top: 80px;
+    padding: 15px 40px;
+    margin-top: 60px;
     display: flex;
 }
 
@@ -149,4 +149,16 @@ footer .copyright {
 .form-control:focus {
     border-color: #D11818;
     box-shadow: 0 0 8px rgba(209, 24, 24, .6);
+}
+
+.table-responsive {
+    border-radius: 3px;
+}
+
+.table tbody tr td, .table tbody tr th {
+    padding: 10px;
+}
+
+.info-block {
+    margin-bottom: 40px;
 }
