@@ -8,6 +8,9 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+// Plugins
+@import "bootstrap-select";
+
 html {
     background: #000000;
 }
@@ -15,7 +18,7 @@ html {
 body {
     background: url("bg.png") no-repeat center top fixed;
     color: #222222;
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -74,6 +77,7 @@ header h1, header h2 {
 
 main {
     padding-top: 40px;
+    min-height: 600px;
 }
 
 footer {
@@ -131,14 +135,18 @@ footer .copyright {
     width: 1%;
 }
 
-.btn-blood {
-    color: #bbbbbb;
-    background: #ffffff;
-    border: 1px solid #ccd0d2;
-}
-
 .text-white {
     color: #ffffff;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.btn-blood {
+    color: #222222;
+    background: #ffffff;
+    border: 1px solid #ccd0d2;
 }
 
 .btn-blood:hover {
@@ -164,4 +172,12 @@ footer .copyright {
 
 .info-block {
     margin-bottom: 40px;
+}
+
+.heading {
+    margin-bottom: 20px;
+}
+
+.container-padding {
+    padding: 20px;
 }
