@@ -2,16 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Item;
 use App\Order;
+use App\Location;
 use App\Http\Requests\OrderRequest;
 
 class OrderController extends Controller
 {
     protected $order;
+    protected $item;
+    protected $location;
 
-    public function __construct(Order $order)
+    public function __construct(Order $order, Item $item, Location $location)
     {
         $this->order = $order;
+        $this->item = $item;
+        $this->location = $location;
     }
 
     /**
@@ -33,7 +39,10 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        $items = $this->item->pluck('name', 'id');
+        $locations = $this->location->pluck('name', 'id');
+
+        return view('orders.create', compact('items', 'locations'));
     }
 
     /**
@@ -50,6 +59,7 @@ class OrderController extends Controller
             'user_id' => $userId,
             'item_id' => $itemId,
             'type' => $request->type,
+            'quantity' => $request->quantity,
             'price' => $request->price
         ]);
     }
