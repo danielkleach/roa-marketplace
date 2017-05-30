@@ -4,8 +4,7 @@
             <div class="col-md-4 col-sm-12">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{ route('home.index') }}">Home</a></li>
-                    <li><a href="#">Buy</a></li>
-                    <li><a href="#">Sell</a></li>
+                    <li><a href="{{ route('orders.create') }}">Buy/Sell</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
