@@ -23,6 +23,7 @@
         <div>
             <h2>{{ $order->item->name }}</h2>
             <p>{{ $order->type }}</p>
+            <p>{{ $order->quantity }}</p>
             <p>{{ $order->price }}</p>
         </div>
     @endforeach
