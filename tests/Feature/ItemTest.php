@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Item;
+use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
@@ -12,9 +13,7 @@ class ItemTest extends TestCase
 
     public function test_user_can_view_all_items()
     {
-        $items = factory(Item::class, 5)->create([
-            'name' => 'New Item'
-        ]);
+        $items = factory(Item::class, 5)->create();
 
         $response = $this->get('/items');
 
@@ -23,26 +22,20 @@ class ItemTest extends TestCase
         foreach ($items as $item) {
             $response->assertSee($item->name);
             $response->assertSee($item->description);
-            $response->assertSee($item->image);
             $response->assertSee($item->rarity);
         }
     }
 
     public function test_user_can_view_an_item()
     {
-        $item = factory(Item::class)->create([
-            'name' => 'New Item',
-            'description' => 'Type of wood.',
-            'image' => '/materials/timber.png',
-            'rarity' => 'Common'
-        ]);
+        $item = factory(Item::class)->create();
 
         $response = $this->get('/items/'.$item->id);
 
         $response->assertStatus(200);
-        $response->assertSee('New Item');
-        $response->assertSee('Type of wood.');
-        $response->assertSee('/materials/timber.png');
-        $response->assertSee('Common');
+
+        $response->assertSee($item->name);
+        $response->assertSee($item->description);
+        $response->assertSee($item->rarity);
     }
 }

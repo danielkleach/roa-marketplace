@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use App\Item;
+use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
@@ -12,23 +13,26 @@ class ItemTest extends TestCase
 
     public function test_user_can_create_an_item()
     {
-        factory(Item::class)->create([
-            'name' => 'New Item',
-            'description' => 'Type of wood.',
-            'image' => '/materials/timber.png',
-            'rarity' => 'Common'
-        ]);
+        $user = factory(User::class)->create();
 
-        $this->assertDatabaseHas('items', [
+        $data = [
             'name' => 'New Item',
             'description' => 'Type of wood.',
             'image' => '/materials/timber.png',
             'rarity' => 'Common'
-        ]);
+        ];
+
+        $response = $this->actingAs($user)
+            ->postJson("/items", $data);
+
+        $response->assertStatus(201);
+        $this->assertDatabaseHas('items', $data);
     }
 
     public function test_user_can_update_an_item()
     {
+        $user = factory(User::class)->create();
+
         $item = factory(Item::class)->create([
             'name' => 'Old Item',
             'description' => 'Type of wood.',
@@ -36,18 +40,17 @@ class ItemTest extends TestCase
             'rarity' => 'Common'
         ]);
 
-        $item->update([
+        $data = [
             'name' => 'New Item',
             'description' => 'Type of lumber.',
             'image' => '/materials/wood.png',
             'rarity' => 'Uncommon'
-        ]);
+        ];
 
-        $this->assertDatabaseHas('items', [
-            'name' => 'New Item',
-            'description' => 'Type of lumber.',
-            'image' => '/materials/wood.png',
-            'rarity' => 'Uncommon'
-        ]);
+        $response = $this->actingAs($user)
+            ->patchJson("/items/{$item->id}", $data);
+
+        $response->assertStatus(200);
+        $this->assertDatabaseHas('items', $data);
     }
 }

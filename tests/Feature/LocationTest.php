@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Location;
+use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
@@ -12,9 +13,12 @@ class LocationTest extends TestCase
 
     public function test_user_can_view_all_locations()
     {
+        $user = factory(User::class)->create();
+
         $locations = factory(Location::class, 5)->create();
 
-        $response = $this->get('/locations');
+        $response = $this->actingAs($user)
+            ->get('/locations');
 
         $response->assertStatus(200);
 
@@ -25,11 +29,14 @@ class LocationTest extends TestCase
 
     public function test_user_can_view_a_location()
     {
+        $user = factory(User::class)->create();
+
         $location = factory(Location::class)->create([
             'name' => 'New Location',
         ]);
 
-        $response = $this->get('/locations/'.$location->id);
+        $response = $this->actingAs($user)
+            ->get('/locations/'.$location->id);
 
         $response->assertStatus(200);
         $response->assertSee('New Location');

@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use App\Location;
+use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
@@ -12,27 +13,35 @@ class LocationTest extends TestCase
 
     public function test_user_can_create_a_location()
     {
-        factory(Location::class)->create([
-            'name' => 'New Location',
-        ]);
+        $user = factory(User::class)->create();
 
-        $this->assertDatabaseHas('locations', [
+        $data = [
             'name' => 'New Location',
-        ]);
+        ];
+
+        $response = $this->actingAs($user)
+            ->postJson("/locations", $data);
+
+        $response->assertStatus(201);
+        $this->assertDatabaseHas('locations', $data);
     }
 
     public function test_user_can_update_a_location()
     {
+        $user = factory(User::class)->create();
+
         $location = factory(Location::class)->create([
             'name' => 'Old Location',
         ]);
 
-        $location->update([
+        $data = [
             'name' => 'New Location',
-        ]);
+        ];
 
-        $this->assertDatabaseHas('locations', [
-            'name' => 'New Location',
-        ]);
+        $response = $this->actingAs($user)
+            ->patchJson("/locations/{$location->id}", $data);
+
+        $response->assertStatus(200);
+        $this->assertDatabaseHas('locations', $data);
     }
 }

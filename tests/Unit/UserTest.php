@@ -14,19 +14,16 @@ class UserTest extends TestCase
 
     public function test_user_can_be_updated()
     {
-        $user = factory(User::class)->create([
-            'email' => 'test@test.com',
-            'password' => 'Test123'
-        ]);
+        $user = factory(User::class)->create();
 
-        $user->update([
+        $data = [
             'password' => 'Test456'
-        ]);
+        ];
 
-        $this->assertDatabaseHas('users', [
-            'id' => $user->id,
-            'email' => $user->email,
-            'password' => 'Test456'
-        ]);
+        $response = $this->actingAs($user)
+            ->patchJson("/users/{$user->id}", $data);
+
+        $response->assertStatus(200);
+        $this->assertDatabaseHas('users', $data);
     }
 }

@@ -16,17 +16,17 @@ class ProfileTest extends TestCase
     {
         $user = factory(User::class)->create();
 
-        factory(Profile::class)->create([
+        $data = [
             'user_id' => $user->id,
             'character_name' => 'Red Queen',
             'race' => 'Elf'
-        ]);
+        ];
 
-        $this->assertDatabaseHas('profiles', [
-            'user_id' => $user->id,
-            'character_name' => 'Red Queen',
-            'race' => 'Elf'
-        ]);
+        $response = $this->actingAs($user)
+            ->postJson("/profiles", $data);
+
+        $response->assertStatus(201);
+        $this->assertDatabaseHas('profiles', $data);
     }
 
     public function test_user_can_update_their_profile()
@@ -39,15 +39,15 @@ class ProfileTest extends TestCase
             'race' => 'Elf'
         ]);
 
-        $profile->update([
+        $data = [
             'character_name' => 'Blue Queen',
             'race' => 'Human'
-        ]);
+        ];
 
-        $this->assertDatabaseHas('profiles', [
-            'user_id' => $user->id,
-            'character_name' => 'Blue Queen',
-            'race' => 'Human'
-        ]);
+        $response = $this->actingAs($user)
+            ->patchJson("/profiles/{$profile->id}", $data);
+
+        $response->assertStatus(200);
+        $this->assertDatabaseHas('profiles', $data);
     }
 }
