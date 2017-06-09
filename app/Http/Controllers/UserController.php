@@ -80,9 +80,9 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, $id)
     {
-        $profile = $this->user->findOrFail($id);
+        $user = $this->user->findOrFail($id);
 
-        return $profile->update([
+        return $user->update([
             'password' => $request->password
         ]);
     }
