@@ -72,16 +72,16 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $order = $this->order->whereHas('item')->findOrFail($id);
+        $order = $this->order->with('item')->findOrFail($id);
 
         $sellOrders = $this->order
-            ->whereHas('item')
+            ->with('item')
             ->where('type', 'Sell')
             ->where('user_id', $order->user_id)
             ->get();
 
         $buyOrders = $this->order
-            ->whereHas('item')
+            ->with('item')
             ->where('type', 'Buy')
             ->where('user_id', $order->user_id)
             ->get();
