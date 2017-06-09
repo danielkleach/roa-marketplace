@@ -23,7 +23,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $items = $this->item->with('order.');
+        $items = $this->item->all();
 
         return view('items.index', ['items' => $items]);
     }
@@ -103,6 +103,8 @@ class ItemController extends Controller
     public function update(ItemRequest $request, $id)
     {
         $item = $this->item->findOrFail($id);
+
+        $this->authorize('update', $item);
 
         return $item->update($request->all());
     }
