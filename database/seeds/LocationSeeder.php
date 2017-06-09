@@ -15,6 +15,10 @@ class LocationSeeder extends Seeder
     public function run()
     {
         Location::create([
+            'name' => 'Anywhere',
+        ]);
+
+        Location::create([
             'name' => 'Alfar Lands',
         ]);
 
