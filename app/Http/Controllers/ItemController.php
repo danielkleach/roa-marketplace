@@ -104,8 +104,6 @@ class ItemController extends Controller
     {
         $item = $this->item->findOrFail($id);
 
-        $this->authorize('update', $item);
-
         return $item->update($request->all());
     }
 
