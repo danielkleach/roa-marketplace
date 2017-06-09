@@ -29,6 +29,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 $factory->define(App\Profile::class, function (Faker\Generator $faker) {
 
     return [
+        'user_id' => $faker->numberBetween(1, 10),
         'character_name' => $faker->unique()->name,
         'race' => $faker->randomElement(['Alfar', 'Dwarf', 'Elf', 'Human', 'Mahirim', 'Ork']),
     ];
@@ -49,6 +50,7 @@ $factory->define(App\Item::class, function (Faker\Generator $faker) {
 $factory->define(App\Order::class, function (Faker\Generator $faker) {
 
     return [
+        'user_id' => $faker->numberBetween(1, 10),
         'item_id' => $faker->numberBetween(1, 10),
         'location_id' => $faker->numberBetween(1, 6),
         'type' => $faker->randomElement(['Buy', 'Sell']),
