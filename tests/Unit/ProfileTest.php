@@ -25,7 +25,7 @@ class ProfileTest extends TestCase
         $response = $this->actingAs($user)
             ->postJson("/profiles", $data);
 
-        $response->assertStatus(201);
+        $response->assertStatus(200);
         $this->assertDatabaseHas('profiles', $data);
     }
 

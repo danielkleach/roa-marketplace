@@ -25,7 +25,7 @@ class ItemTest extends TestCase
         $response = $this->actingAs($user)
             ->postJson("/items", $data);
 
-        $response->assertStatus(201);
+        $response->assertStatus(200);
         $this->assertDatabaseHas('items', $data);
     }
 

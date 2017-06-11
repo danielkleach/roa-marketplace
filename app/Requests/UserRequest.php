@@ -22,8 +22,7 @@ class UserRequest extends Request
                     'password' => [
                         'required',
                         'string',
-                        'min:8',
-                        'confirmed'
+                        'min:8'
                     ]
                 ];
             default:

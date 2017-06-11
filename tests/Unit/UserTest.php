@@ -17,7 +17,7 @@ class UserTest extends TestCase
         $user = factory(User::class)->create();
 
         $data = [
-            'password' => 'Test456'
+            'password' => 'Test4567',
         ];
 
         $response = $this->actingAs($user)

@@ -22,7 +22,7 @@ class LocationTest extends TestCase
         $response = $this->actingAs($user)
             ->postJson("/locations", $data);
 
-        $response->assertStatus(201);
+        $response->assertStatus(200);
         $this->assertDatabaseHas('locations', $data);
     }
 
