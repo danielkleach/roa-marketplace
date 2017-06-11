@@ -42,4 +42,18 @@ class Order extends Model
     {
         return $this->created_at->diffForHumans();
     }
+
+    /*********************************************
+     * Scopes
+     *********************************************/
+
+    public function scopeLatestBuyOrders($query)
+    {
+        return $query->where('type', 'Buy')->limit(10);
+    }
+
+    public function scopeLatestSellOrders($query)
+    {
+        return $query->where('type', 'Sell')->limit(10);
+    }
 }
