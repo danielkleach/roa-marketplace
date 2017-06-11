@@ -27,7 +27,9 @@ class OrderTest extends TestCase
             'location_id' => $location->id,
             'type' => 'Sell',
             'quantity' => 20,
-            'price' => 500
+            'price' => 500,
+            'start_date' => Carbon::now(),
+            'end_date' => Carbon::now()->addDays(3)
         ];
 
         $response = $this->actingAs($user)

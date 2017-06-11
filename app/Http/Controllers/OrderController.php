@@ -6,6 +6,7 @@ use App\Item;
 use App\Order;
 use App\Location;
 use App\Http\Requests\OrderRequest;
+use Carbon\Carbon;
 
 class OrderController extends Controller
 {
@@ -27,7 +28,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = $this->order->whereHas('item')->get();
+        $orders = $this->order->whereHas('item')->orderBy('start_date', 'desc')->get();
 
         return view('orders.index', ['orders' => $orders]);
     }
@@ -59,7 +60,9 @@ class OrderController extends Controller
             'location_id' => $request->location_id,
             'type' => $request->type,
             'quantity' => $request->quantity,
-            'price' => $request->price
+            'price' => $request->price,
+            'start_date' => Carbon::now()->toDateTimeString(),
+            'end_date' => Carbon::now()->addDays(3)->toDateTimeString()
         ]);
 
         return $order;

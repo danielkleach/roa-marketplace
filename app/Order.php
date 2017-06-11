@@ -12,7 +12,18 @@ class Order extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'item_id', 'location_id', 'type', 'quantity', 'price'
+        'user_id', 'item_id', 'location_id', 'type', 'quantity', 'price', 'start_date', 'end_date'
+    ];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'deleted_at',
+        'start_date',
+        'end_date',
     ];
 
     /*********************************************
@@ -40,7 +51,7 @@ class Order extends Model
 
     public function getFormattedDateAttribute()
     {
-        return $this->created_at->diffForHumans();
+        return $this->start_date->diffForHumans();
     }
 
     /*********************************************
@@ -49,11 +60,11 @@ class Order extends Model
 
     public function scopeLatestBuyOrders($query)
     {
-        return $query->where('type', 'Buy')->limit(10);
+        return $query->where('type', 'Buy')->orderBy('start_date', 'desc')->limit(10);
     }
 
     public function scopeLatestSellOrders($query)
     {
-        return $query->where('type', 'Sell')->limit(10);
+        return $query->where('type', 'Sell')->orderBy('start_date', 'desc')->limit(10);
     }
 }

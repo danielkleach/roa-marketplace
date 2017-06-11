@@ -21,6 +21,8 @@ class CreateOrdersTable extends Migration
             $table->enum('type', ['Buy', 'Sell']);
             $table->integer('quantity')->unsigned();
             $table->integer('price')->unsigned()->nullable();
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
 
             $table->timestamps();
             $table->softDeletes();
