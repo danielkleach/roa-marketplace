@@ -23,6 +23,10 @@ class OrderRequest extends Request
                         'required',
                         'string',
                     ],
+                    'quantity' => [
+                        'required',
+                        'numeric'
+                    ],
                     'price' => [
                         'required',
                         'numeric'
@@ -34,6 +38,11 @@ class OrderRequest extends Request
                         'sometimes',
                         'required',
                         'string',
+                    ],
+                    'quantity' => [
+                        'sometimes',
+                        'required',
+                        'numeric'
                     ],
                     'price' => [
                         'sometimes',
