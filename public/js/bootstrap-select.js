@@ -996,14 +996,14 @@
           }
 
           $menu.css({
-            'max-height': menuHeight + 'px',
+            'max-height': '250px',
             'overflow': 'hidden',
             'min-height': minHeight + headerHeight + searchHeight + actionsHeight + doneButtonHeight + 'px'
           });
           $menuInner.css({
             'max-height': menuHeight - headerHeight - searchHeight - actionsHeight - doneButtonHeight - menuPadding.vert + 'px',
             'overflow-y': 'auto',
-            'min-height': Math.max(minHeight - menuPadding.vert, 0) + 'px'
+            'min-height': '100px'
           });
         };
         getSize();
