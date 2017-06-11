@@ -49,19 +49,20 @@ class OrderController extends Controller
      * Store a newly created resource in storage.
      *
      * @param OrderRequest $request
-     * @param $userId
-     * @param $itemId
      * @return \Illuminate\Http\Response
      */
-    public function store(OrderRequest $request, $userId, $itemId)
+    public function store(OrderRequest $request)
     {
-        return $this->order->create([
-            'user_id' => $userId,
-            'item_id' => $itemId,
+        $order = $this->order->create([
+            'user_id' => $request->user_id,
+            'item_id' => $request->item_id,
+            'location_id' => $request->location_id,
             'type' => $request->type,
             'quantity' => $request->quantity,
             'price' => $request->price
         ]);
+
+        return $order;
     }
 
     /**
@@ -111,7 +112,9 @@ class OrderController extends Controller
     {
         $order = $this->order->findOrFail($id);
 
-        return $order->update($request->all());
+        $order->update($request->all());
+
+        return $order;
     }
 
     /**

@@ -20,19 +20,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $latestSellOrders = $this->order
-            ->with('item', 'user.profile', 'location')
-            ->where('type', 'sell')
-            ->orderBy('created_at', 'desc')
-            ->limit(10)
-            ->get();
+        $latestSellOrders = $this->order->latestSellOrders()->get();
 
-        $latestBuyOrders = $this->order
-            ->with('item', 'user.profile', 'location')
-            ->where('type', 'buy')
-            ->orderBy('created_at', 'desc')
-            ->limit(10)
-            ->get();
+        $latestBuyOrders = $this->order->latestBuyOrders()->get();
 
         return view('index', compact('latestSellOrders', 'latestBuyOrders'));
     }

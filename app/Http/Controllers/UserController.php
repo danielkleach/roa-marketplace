@@ -82,9 +82,9 @@ class UserController extends Controller
     {
         $user = $this->user->findOrFail($id);
 
-        return $user->update([
-            'password' => $request->password
-        ]);
+        $user->update($request->all());
+
+        return $user;
     }
 
     /**

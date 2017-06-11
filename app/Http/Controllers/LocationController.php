@@ -84,7 +84,9 @@ class LocationController extends Controller
     {
         $location = $this->location->findOrFail($id);
 
-        return $location->update($request->all());
+        $location->update($request->all());
+
+        return $location;
     }
 
     /**

@@ -43,16 +43,17 @@ class ProfileController extends Controller
      * Store a newly created resource in storage.
      *
      * @param ProfileRequest $request
-     * @param $userId
      * @return \Illuminate\Http\Response
      */
-    public function store(ProfileRequest $request, $userId)
+    public function store(ProfileRequest $request)
     {
-        return $this->profile->create([
-            'user_id' => $userId,
+        $profile = $this->profile->create([
+            'user_id' => $request->user_id,
             'character_name' => $request->character_name,
             'race' => $request->race
         ]);
+
+        return $profile;
     }
 
     /**
@@ -102,10 +103,9 @@ class ProfileController extends Controller
     {
         $profile = $this->profile->findOrFail($id);
 
-        return $profile->update([
-            'character_name' => $request->character_name,
-            'race' => $request->race
-        ]);
+        $profile->update($request->all());
+
+        return $profile;
     }
 
     /**

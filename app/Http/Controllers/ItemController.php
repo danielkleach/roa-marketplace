@@ -104,7 +104,9 @@ class ItemController extends Controller
     {
         $item = $this->item->findOrFail($id);
 
-        return $item->update($request->all());
+        $item->update($request->all());
+
+        return $item;
     }
 
     /**
