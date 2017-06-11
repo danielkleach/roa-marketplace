@@ -13,6 +13,7 @@
 
 use App\Item;
 use App\User;
+use Carbon\Carbon;
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\User::class, function (Faker\Generator $faker) {
@@ -49,6 +50,18 @@ $factory->define(App\Item::class, function (Faker\Generator $faker) {
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\Order::class, function (Faker\Generator $faker) {
 
+    $start_at_earliest = Carbon::today()->subMonth();
+    $start_at_latest = Carbon::today();
+
+    $start_date = Carbon::instance($faker->dateTimeBetween(
+        $start_at_earliest,
+        $start_at_latest
+    ));
+
+    $end_date = Carbon::instance(
+        $faker->dateTimeBetween($start_date->copy()->addDays(1), $start_date->copy()->addDays(10))
+    );
+
     return [
         'user_id' => $faker->numberBetween(1, 10),
         'item_id' => $faker->numberBetween(1, 10),
@@ -56,6 +69,8 @@ $factory->define(App\Order::class, function (Faker\Generator $faker) {
         'type' => $faker->randomElement(['Buy', 'Sell']),
         'quantity' => $faker->numberBetween(1, 1000),
         'price' => $faker->numberBetween(10, 200),
+        'start_date' => $start_date->toDateTimeString(),
+        'end_date' => $end_date->toDateTimeString(),
     ];
 });
 
