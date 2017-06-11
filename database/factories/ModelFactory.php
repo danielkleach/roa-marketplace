@@ -39,7 +39,7 @@ $factory->define(App\Profile::class, function (Faker\Generator $faker) {
 $factory->define(App\Item::class, function (Faker\Generator $faker) {
 
     return [
-        'name' => $faker->unique()->name,
+        'name' => $faker->unique()->word,
         'description' => $faker->sentence(15),
         'image' => $faker->imageUrl(),
         'rarity' => $faker->randomElement(['Common', 'Rare', 'Ultra-Rare', 'Uncommon']),
