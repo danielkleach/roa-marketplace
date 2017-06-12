@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Item;
 use App\Order;
 use App\Location;
-use App\Http\Requests\OrderRequest;
 use Carbon\Carbon;
+use App\Http\Requests\OrderRequest;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -54,8 +55,8 @@ class OrderController extends Controller
      */
     public function store(OrderRequest $request)
     {
-        $order = $this->order->create([
-            'user_id' => $request->user_id,
+        $this->order->create([
+            'user_id' => Auth::user()->id,
             'item_id' => $request->item_id,
             'location_id' => $request->location_id,
             'type' => $request->type,
@@ -65,7 +66,8 @@ class OrderController extends Controller
             'end_date' => Carbon::now()->addDays(3)->toDateTimeString()
         ]);
 
-        return $order;
+        return redirect()->route('profiles.show', ['id' => Auth::user()->profile->id])
+            ->with('message', 'Your order has been created.');
     }
 
     /**
