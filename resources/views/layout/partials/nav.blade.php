@@ -5,7 +5,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{ route('home.index') }}">Home</a></li>
                     <li><a href="{{ route('orders.create') }}">Buy/Sell</a></li>
-                    <li><a href="#">Contact</a></li>
+                    {{--<li><a href="#">Contact</a></li>--}}
                 </ul>
             </div>
             @include('layout.partials.search')
