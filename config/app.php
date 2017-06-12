@@ -14,6 +14,9 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'site' => env('SITE', 'roa-marketplace'),
+    'algolia_key' => env('ALGOLIA_KEY', 'default'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -178,6 +181,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Collective\Html\HtmlServiceProvider::class,
+
+        AlgoliaSearch\Laravel\AlgoliaServiceProvider::class
 
     ],
 

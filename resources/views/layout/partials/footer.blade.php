@@ -5,6 +5,12 @@
     </footer>
     <script src="/js/jquery-3.2.1.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+    <script>
+        var algoliaKey = '{{ config('app.algolia_key') }}';
+        var environment = '{{ config('app.env') }}';
+    </script>
+    <script src="/js/search.js"></script>
     @yield('scripts')
 </body>
 </html>
