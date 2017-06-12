@@ -16,10 +16,10 @@
                         <tr>
                             <th>Item</th>
                             <th>Location</th>
-                            <th>Quantity</th>
-                            <th>Price Each</th>
-                            <th>Created</th>
-                            <th>Actions</th>
+                            <th class="text-right">Quantity</th>
+                            <th class="text-right">Price Each</th>
+                            <th class="text-right">Created</th>
+                            <th class="text-center">Actions</th>
                         </tr>
                         @if (count($sellOrders))
                             @foreach ($sellOrders as $order)
@@ -28,22 +28,22 @@
                                     <td>{{ $order->location->name }}</td>
                                     <td class="text-right">{{ number_format($order->quantity) }}</td>
                                     <td class="text-right">{{ number_format($order->price) }}G</td>
-                                    <td>{{ $order->formattedDate }}</td>
-                                    <td><button type="button" class="btn btn-danger" data-id="{{ $order->id }}" onclick="closeOrder(this)">Close Order</button></td>
+                                    <td class="text-right">{{ $order->formattedDate }}</td>
+                                    <td class="text-center"><button type="button" class="btn btn-danger" data-id="{{ $order->id }}" onclick="closeOrder(this)">Close Order</button></td>
                                 </tr>
                             @endforeach
                         @else
                             <tr>
-                                <td class="text-center" colspan="5">This user has no active sell orders.</td>
+                                <td class="text-center" colspan="6">This user has no active sell orders.</td>
                             </tr>
                         @endif
                         <tr>
                             <th>Item</th>
                             <th>Location</th>
-                            <th>Quantity</th>
-                            <th>Price Each</th>
-                            <th>Created</th>
-                            <th>Actions</th>
+                            <th class="text-right">Quantity</th>
+                            <th class="text-right">Price Each</th>
+                            <th class="text-right">Created</th>
+                            <th class="text-center">Actions</th>
                         </tr>
                     </table>
                 </div>
@@ -55,10 +55,10 @@
                         <tr>
                             <th>Item</th>
                             <th>Location</th>
-                            <th>Quantity</th>
-                            <th>Price Each</th>
-                            <th>Created</th>
-                            <th>Actions</th>
+                            <th class="text-right">Quantity</th>
+                            <th class="text-right">Price Each</th>
+                            <th class="text-right">Created</th>
+                            <th class="text-center">Actions</th>
                         </tr>
                         @if (count($buyOrders))
                             @foreach ($buyOrders as $order)
@@ -67,22 +67,22 @@
                                     <td>{{ $order->location->name }}</td>
                                     <td class="text-right">{{ number_format($order->quantity) }}</td>
                                     <td class="text-right">{{ number_format($order->price) }}G</td>
-                                    <td>{{ $order->formattedDate }}</td>
-                                    <td><button type="button" class="btn btn-danger" data-id="{{ $order->id }}" onclick="closeOrder(this)">Close Order</button></td>
+                                    <td class="text-right">{{ $order->formattedDate }}</td>
+                                    <td class="text-center"><button type="button" class="btn btn-danger" data-id="{{ $order->id }}" onclick="closeOrder(this)">Close Order</button></td>
                                 </tr>
                             @endforeach
                         @else
                             <tr>
-                                <td class="text-center" colspan="5">This user has no active buy orders.</td>
+                                <td class="text-center" colspan="6">This user has no active buy orders.</td>
                             </tr>
                         @endif
                         <tr>
                             <th>Item</th>
                             <th>Location</th>
-                            <th>Quantity</th>
-                            <th>Price Each</th>
-                            <th>Created</th>
-                            <th>Actions</th>
+                            <th class="text-right">Quantity</th>
+                            <th class="text-right">Price Each</th>
+                            <th class="text-right">Created</th>
+                            <th class="text-center">Actions</th>
                         </tr>
                     </table>
                 </div>
@@ -95,10 +95,10 @@
                             <th>Item</th>
                             <th>Type</th>
                             <th>Location</th>
-                            <th>Quantity</th>
-                            <th>Price Each</th>
-                            <th>Expired</th>
-                            <th>Actions</th>
+                            <th class="text-right">Quantity</th>
+                            <th class="text-right">Price Each</th>
+                            <th class="text-right">Expired</th>
+                            <th class="text-center">Actions</th>
                         </tr>
                         @if (count($expiredOrders))
                             @foreach ($expiredOrders as $order)
@@ -108,23 +108,23 @@
                                     <td>{{ $order->location->name }}</td>
                                     <td class="text-right">{{ number_format($order->quantity) }}</td>
                                     <td class="text-right">{{ number_format($order->price) }}G</td>
-                                    <td>{{ $order->expiredDate }}</td>
-                                    <td><button type="button" class="btn btn-primary" data-id="{{ $order->id }}" onclick="refreshOrder(this)">Refresh Order</button></td>
+                                    <td class="text-right">{{ $order->expiredDate }}</td>
+                                    <td class="text-center"><button type="button" class="btn btn-primary" data-id="{{ $order->id }}" onclick="refreshOrder(this)">Refresh Order</button></td>
                                 </tr>
                             @endforeach
                         @else
                             <tr>
-                                <td class="text-center" colspan="5">This user has no expired orders.</td>
+                                <td class="text-center" colspan="7">This user has no expired orders.</td>
                             </tr>
                         @endif
                         <tr>
                             <th>Item</th>
                             <th>Type</th>
                             <th>Location</th>
-                            <th>Quantity</th>
-                            <th>Price Each</th>
-                            <th>Expired</th>
-                            <th>Actions</th>
+                            <th class="text-right">Quantity</th>
+                            <th class="text-right">Price Each</th>
+                            <th class="text-right">Expired</th>
+                            <th class="text-center">Actions</th>
                         </tr>
                     </table>
                 </div>

@@ -14,7 +14,7 @@
                             <th>Location</th>
                             <th class="text-right">Quantity</th>
                             <th class="text-right">Price Each</th>
-                            <th>Created</th>
+                            <th class="text-right">Created</th>
                         </tr>
                         @foreach ($latestSellOrders as $order)
                             <tr>
@@ -24,7 +24,7 @@
                                 <td>{{ $order->location->name }}</td>
                                 <td class="text-right">{{ number_format($order->quantity) }}</td>
                                 <td class="text-right">{{ number_format($order->price) }}G</td>
-                                <td>{{ $order->formattedDate }}</td>
+                                <td class="text-right">{{ $order->formattedDate }}</td>
                             </tr>
                         @endforeach
                     </table>
@@ -41,7 +41,7 @@
                             <th>Location</th>
                             <th class="text-right">Quantity</th>
                             <th class="text-right">Price Each</th>
-                            <th>Created</th>
+                            <th class="text-right">Created</th>
                         </tr>
                         @foreach ($latestBuyOrders as $order)
                             <tr>
@@ -51,7 +51,7 @@
                                 <td>{{ $order->location->name }}</td>
                                 <td class="text-right">{{ number_format($order->quantity) }}</td>
                                 <td class="text-right">{{ number_format($order->price) }}G</td>
-                                <td>{{ $order->formattedDate }}</td>
+                                <td class="text-right">{{ $order->formattedDate }}</td>
                             </tr>
                         @endforeach
                     </table>
