@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder
         $this->call(ItemSeeder::class);
         $this->call(LocationSeeder::class);
         $this->call(RaceSeeder::class);
-        $this->call(UserSeeder::class);
+
+        if (app()->environment('local', 'development')) {
+            $this->call(UserSeeder::class);
+        }
     }
 }
