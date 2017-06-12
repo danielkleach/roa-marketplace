@@ -65,7 +65,7 @@ class UncommonItemSeeder extends Seeder
 
         Item::create([
             'name' => 'Spellchanting Essence',
-            'description' => 'The life essence of a chanting monster.',
+            'description' => 'The life essence of a spell-chanting monster.',
             'image' => '/essences/spellchanting-essence.png',
             'rarity' => 'Uncommon',
         ]);
