@@ -81,3 +81,11 @@ $factory->define(App\Location::class, function (Faker\Generator $faker) {
         'name' => $faker->text(10),
     ];
 });
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Race::class, function (Faker\Generator $faker) {
+
+    return [
+        'name' => $faker->text(10),
+    ];
+});
