@@ -54,6 +54,11 @@ class Order extends Model
         return $this->start_date->diffForHumans();
     }
 
+    public function getExpiredDateAttribute()
+    {
+        return $this->end_date->diffForHumans();
+    }
+
     /*********************************************
      * Scopes
      *********************************************/
@@ -66,5 +71,16 @@ class Order extends Model
     public function scopeLatestSellOrders($query)
     {
         return $query->where('type', 'Sell')->orderBy('start_date', 'desc')->limit(10);
+    }
+
+    public function scopeOpen($query)
+    {
+        return $query->where('start_date', '<=', Carbon::now())
+            ->where('end_date', '>=', Carbon::now());
+    }
+
+    public function scopeClosed($query)
+    {
+        return $query->where('end_date', '<', Carbon::now());
     }
 }

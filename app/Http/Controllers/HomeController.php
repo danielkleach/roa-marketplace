@@ -20,9 +20,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $latestSellOrders = $this->order->latestSellOrders()->get();
+        $latestSellOrders = $this->order->open()->latestSellOrders()->get();
 
-        $latestBuyOrders = $this->order->latestBuyOrders()->get();
+        $latestBuyOrders = $this->order->open()->latestBuyOrders()->get();
 
         return view('index', compact('latestSellOrders', 'latestBuyOrders'));
     }
