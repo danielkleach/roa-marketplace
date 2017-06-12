@@ -1,11 +1,10 @@
 <?php
 
-use Database\Seeds\Items\ItemSeeder;
-use Database\Seeds\LocationSeeder;
-use Database\Seeds\OrderSeeder;
-use Database\Seeds\ProfileSeeder;
+use Database\Seeds\RaceSeeder;
 use Database\Seeds\UserSeeder;
 use Illuminate\Database\Seeder;
+use Database\Seeds\LocationSeeder;
+use Database\Seeds\Items\ItemSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,6 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(ItemSeeder::class);
         $this->call(LocationSeeder::class);
+        $this->call(RaceSeeder::class);
         $this->call(UserSeeder::class);
     }
 }
