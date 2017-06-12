@@ -67,18 +67,26 @@ class ProfileController extends Controller
         $profile = $this->profile->with('user')->findOrFail($id);
 
         $sellOrders = $this->order->with('item')
+            ->open()
             ->where('type', 'sell')
             ->where('user_id', $profile->user->id)
             ->orderBy('created_at', 'desc')
             ->get();
 
         $buyOrders = $this->order->with('item')
+            ->open()
             ->where('type', 'buy')
             ->where('user_id', $profile->user->id)
             ->orderBy('created_at', 'desc')
             ->get();
 
-        return view('profiles.show', compact('profile', 'sellOrders', 'buyOrders'));
+        $expiredOrders = $this->order->with('item')
+            ->closed()
+            ->where('user_id', $profile->user->id)
+            ->orderBy('start_date', 'desc')
+            ->get();
+
+        return view('profiles.show', compact('profile', 'sellOrders', 'buyOrders', 'expiredOrders'));
     }
 
     /**
