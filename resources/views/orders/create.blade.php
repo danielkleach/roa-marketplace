@@ -43,9 +43,9 @@
             </div>
             <div class="col-md-6">
                 <h4>Notice:</h4>
-                <p>Your orders will be active for 24 hours, unless you close them early.  Once an order has reached the 24 hour expiration, you will be able to reopen it through your profile.</p>
+                <p>Your orders will be active for 3 days, unless you close them early.  Once an order has reached the 3 day expiration, you will be able to reopen it through the "Expired Orders" section of your profile.</p>
                 <p>The intention for this limitation is to limit stale or outdated orders and make for a more meaningful experience.</p>
-                <p>Once your items have been bought or sold, please close your orders through the orders section of your profile.</p>
+                <p>Once your items have been bought or sold, please close your orders through the orders section of your profile. Thank you.</p>
             </div>
         </div>
     </main>
