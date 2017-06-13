@@ -86,12 +86,12 @@ class Order extends Model
 
     public function scopeLatestBuyOrders($query)
     {
-        return $query->where('type', 'Buy')->orderBy('start_date', 'desc')->limit(10);
+        return $query->where('type', 'Buy')->orderBy('start_date', 'desc')->limit(20);
     }
 
     public function scopeLatestSellOrders($query)
     {
-        return $query->where('type', 'Sell')->orderBy('start_date', 'desc')->limit(10);
+        return $query->where('type', 'Sell')->orderBy('start_date', 'desc')->limit(20);
     }
 
     public function scopeOpen($query)

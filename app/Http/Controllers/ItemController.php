@@ -69,14 +69,15 @@ class ItemController extends Controller
             ->where('type', 'sell')
             ->where('item_id', $item->id)
             ->orderBy('price', 'asc')
-            ->limit(10)
+            ->limit(20)
             ->get();
 
         $buyOrders = $this->order
             ->with('item', 'user.profile', 'location')
             ->where('type', 'buy')
+            ->where('item_id', $item->id)
             ->orderBy('created_at', 'desc')
-            ->limit(10)
+            ->limit(20)
             ->get();
 
         return view('items.show', compact('item', 'sellOrders', 'buyOrders'));
