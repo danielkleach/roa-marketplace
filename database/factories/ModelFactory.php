@@ -64,8 +64,8 @@ $factory->define(App\Order::class, function (Faker\Generator $faker) {
 
     return [
         'user_id' => $faker->numberBetween(1, 10),
-        'item_id' => $faker->numberBetween(1, 10),
-        'location_id' => $faker->numberBetween(1, 6),
+        'item_id' => $faker->numberBetween(1, 150),
+        'location_id' => $faker->numberBetween(1, 7),
         'type' => $faker->randomElement(['Buy', 'Sell']),
         'quantity' => $faker->numberBetween(1, 1000),
         'price' => $faker->numberBetween(10, 200),
