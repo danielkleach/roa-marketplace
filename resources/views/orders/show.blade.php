@@ -3,7 +3,7 @@
 @section('content')
     <main>
         <div class="row">
-            <div class="col-md-6 info-block">
+            <div class="col-md-4 info-block">
                 <h3 class="text-white">Order #{{ $order->id }} - {{ $order->item->name }}</h3>
                 <p class="text-white">{{ $order->user->profile->character_name }}</p>
                 <p class="text-white">Location: {{ $order->location->name }} </p>
