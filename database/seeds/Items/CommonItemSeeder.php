@@ -55,5 +55,362 @@ class CommonItemSeeder extends Seeder
             'image' => '/materials/wood.png',
             'rarity' => 'Common',
         ]);
+
+        Item::create([
+            'name' => 'Papyrus Plant',
+            'description' => 'A plant that is used for scribing scrolls and/or manuals.',
+            'image' => '/materials/papyrus.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Blank Scroll',
+            'description' => '',
+            'image' => '/materials/blank-scroll.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Blank Manual',
+            'description' => '',
+            'image' => '/materials/blank-manual.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Manual Page',
+            'description' => '',
+            'image' => '/materials/manual-page.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Ashes',
+            'description' => '',
+            'image' => '/materials/ashes.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Resin',
+            'description' => '',
+            'image' => '/materials/resin.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Mandrake',
+            'description' => '',
+            'image' => '/materials/mandrake.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Sulfur',
+            'description' => '',
+            'image' => '/materials/sulfur.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Bone',
+            'description' => '',
+            'image' => '/materials/bone.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Nacre',
+            'description' => '',
+            'image' => '/materials/nacre.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Stone',
+            'description' => '',
+            'image' => '/materials/stone.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Dirt',
+            'description' => '',
+            'image' => '/materials/dirt.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Sand',
+            'description' => '',
+            'image' => '/materials/sand.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Clay',
+            'description' => '',
+            'image' => '/materials/clay.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Ashes',
+            'description' => '',
+            'image' => '/materials/ashes.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Black Powder',
+            'description' => '',
+            'image' => '/materials/black-powder.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Arrow',
+            'description' => '',
+            'image' => '/materials/arrow.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Fine Arrow',
+            'description' => '',
+            'image' => '/materials/fine-arrow.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Snakeweed',
+            'description' => '',
+            'image' => '/materials/snakeweed.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Archangelica',
+            'description' => '',
+            'image' => '/materials/archangelica.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Hellbore',
+            'description' => '',
+            'image' => '/materials/hellbore.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Baneberry',
+            'description' => '',
+            'image' => '/materials/baneberry.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Meat',
+            'description' => '',
+            'image' => '/materials/meat.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Lean Meat',
+            'description' => '',
+            'image' => '/materials/lean-meat.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Wheat',
+            'description' => '',
+            'image' => '/materials/wheat.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Egg',
+            'description' => '',
+            'image' => '/materials/egg.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Cheese',
+            'description' => '',
+            'image' => '/materials/cheese.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Mushroom',
+            'description' => '',
+            'image' => '/materials/mushroom.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Apple',
+            'description' => '',
+            'image' => '/materials/apple.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Strawberries',
+            'description' => '',
+            'image' => '/materials/strawberries.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Blueberries',
+            'description' => '',
+            'image' => '/materials/blueberries.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Wildberries',
+            'description' => '',
+            'image' => '/materials/wildberries.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Potatoes',
+            'description' => '',
+            'image' => '/materials/potatoes.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Onion',
+            'description' => '',
+            'image' => '/materials/onion.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Yeast',
+            'description' => '',
+            'image' => '/materials/yeast.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Carrot',
+            'description' => '',
+            'image' => '/materials/carrot.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Tree Sap',
+            'description' => '',
+            'image' => '/materials/tree-sap.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Herring',
+            'description' => '',
+            'image' => '/materials/herring.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Bass',
+            'description' => '',
+            'image' => '/materials/bass.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Trout',
+            'description' => '',
+            'image' => '/materials/trout.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Cod',
+            'description' => '',
+            'image' => '/materials/cod.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Salmon',
+            'description' => '',
+            'image' => '/materials/salmon.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Swordfish',
+            'description' => '',
+            'image' => '/materials/swordfish.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Empty Bottle',
+            'description' => '',
+            'image' => '/materials/empty-bottle.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Minor Mana Potion',
+            'description' => '',
+            'image' => '/materials/minor-mana-potion.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Minor Health Potion',
+            'description' => '',
+            'image' => '/materials/minor-health-potion.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Minor Stamina Potion',
+            'description' => '',
+            'image' => '/materials/minor-stamina-potion.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Moderate Mana Potion',
+            'description' => '',
+            'image' => '/materials/moderate-mana-potion.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Moderate Health Potion',
+            'description' => '',
+            'image' => '/materials/moderate-health-potion.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Moderate Stamina Potion',
+            'description' => '',
+            'image' => '/materials/moderate-stamina-potion.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Moderate Mana Potion',
+            'description' => '',
+            'image' => '/materials/moderate-mana-potion.png',
+            'rarity' => 'Common',
+        ]);
     }
 }

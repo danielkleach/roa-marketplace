@@ -14,6 +14,18 @@ class UltraRareItemSeeder extends Seeder
      */
     public function run()
     {
+        Item::create([
+            'name' => 'Vendor Booth',
+            'description' => '',
+            'image' => '/materials/vendor-booth.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
 
+        Item::create([
+            'name' => 'Safe',
+            'description' => '',
+            'image' => '/materials/safe.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
     }
 }
