@@ -28,7 +28,7 @@
                                     <td>{{ $order->location->name }}</td>
                                     <td class="text-right">{{ number_format($order->quantity) }}</td>
                                     <td class="text-right">{{ number_format($order->price) }}G</td>
-                                    <td class="text-right">{{ $order->formattedDate }}</td>
+                                    <td class="text-right">{{ $order->start_date }}</td>
                                     @if (Auth::user()->id == $order->user_id)
                                         <td class="text-center"><button type="button" class="btn btn-danger" data-id="{{ $order->id }}" onclick="closeOrder(this)">Close Order</button></td>
                                     @endif
@@ -69,7 +69,7 @@
                                     <td>{{ $order->location->name }}</td>
                                     <td class="text-right">{{ number_format($order->quantity) }}</td>
                                     <td class="text-right">{{ number_format($order->price) }}G</td>
-                                    <td class="text-right">{{ $order->formattedDate }}</td>
+                                    <td class="text-right">{{ $order->start_date }}</td>
                                     @if (Auth::user()->id == $order->user_id)
                                         <td class="text-center"><button type="button" class="btn btn-danger" data-id="{{ $order->id }}" onclick="closeOrder(this)">Close Order</button></td>
                                     @endif
@@ -112,8 +112,8 @@
                                     <td>{{ $order->location->name }}</td>
                                     <td class="text-right">{{ number_format($order->quantity) }}</td>
                                     <td class="text-right">{{ number_format($order->price) }}G</td>
-                                    <td class="text-right">{{ $order->expiredDate }}</td>
                                     @if (Auth::user()->id == $order->user_id)
+                                    <td class="text-right">{{ $order->end_date }}</td>
                                         <td class="text-center"><button type="button" class="btn btn-primary" data-id="{{ $order->id }}" onclick="refreshOrder(this)">Refresh Order</button></td>
                                     @endif
                                 </tr>
