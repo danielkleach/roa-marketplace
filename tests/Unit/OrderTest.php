@@ -66,4 +66,15 @@ class OrderTest extends TestCase
         $response->assertStatus(200);
         $this->assertDatabaseHas('orders', $data);
     }
+
+    public function test_it_can_set_date_attributes()
+    {
+        $order = factory(Order::class)->create([
+            'start_date' => Carbon::now()->subDays(5)->toDateTimeString(),
+            'end_date' => Carbon::now()->subDays(3)->toDateTimeString()
+        ]);
+
+        $this->assertEquals('5 days ago', $order->start_date);
+        $this->assertEquals('3 days ago', $order->end_date);
+    }
 }
