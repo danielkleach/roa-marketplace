@@ -24,7 +24,7 @@
                         @if (count($sellOrders))
                             @foreach ($sellOrders as $order)
                                 <tr>
-                                    <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->item->name }}</a></td>
+                                    <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
                                     <td>{{ $order->location->name }}</td>
                                     <td class="text-right">{{ number_format($order->quantity) }}</td>
                                     <td class="text-right">{{ number_format($order->price) }}G</td>
@@ -65,7 +65,7 @@
                         @if (count($buyOrders))
                             @foreach ($buyOrders as $order)
                                 <tr>
-                                    <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->item->name }}</a></td>
+                                    <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
                                     <td>{{ $order->location->name }}</td>
                                     <td class="text-right">{{ number_format($order->quantity) }}</td>
                                     <td class="text-right">{{ number_format($order->price) }}G</td>
@@ -107,7 +107,7 @@
                         @if (count($expiredOrders))
                             @foreach ($expiredOrders as $order)
                                 <tr>
-                                    <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->item->name }}</a></td>
+                                    <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
                                     <td>{{ $order->type }}</td>
                                     <td>{{ $order->location->name }}</td>
                                     <td class="text-right">{{ number_format($order->quantity) }}</td>
