@@ -70,14 +70,14 @@ class Order extends Model
      * Methods
      *********************************************/
 
-    public function getFormattedDateAttribute()
+    public function getStartDateAttribute($value)
     {
-        return $this->start_date->diffForHumans();
+        return Carbon::createFromFormat('Y-m-d H:i:s', $value)->diffForHumans();
     }
 
-    public function getExpiredDateAttribute()
+    public function getEndDateAttribute($value)
     {
-        return $this->end_date->diffForHumans();
+        return Carbon::createFromFormat('Y-m-d H:i:s', $value)->diffForHumans();
     }
 
     /*********************************************
