@@ -21,10 +21,10 @@
 <div>
     @foreach ($items as $item)
         <div>
-            <h2>{{ $item->name }}</h2>
-            <p>{{ $item->description }}</p>
+            <h2>{!! $item->name !!}</h2>
+            <p>{!! $item->description !!}</p>
             <p>{{ $item->image }}</p>
-            <p>{{ $item->rarity }}</p>
+            <p>{!! $item->rarity !!}</p>
         </div>
     @endforeach
 </div>

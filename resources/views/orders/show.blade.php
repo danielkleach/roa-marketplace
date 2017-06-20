@@ -4,7 +4,7 @@
     <main>
         <div class="row">
             <div class="col-md-4 info-block">
-                <h3 class="text-white">Order #{{ $order->id }} - {{ $order->item->name }}</h3>
+                <h3 class="text-white">Order #{{ $order->id }} - {!! $order->item->name !!}</h3>
                 <p class="text-white">{{ $order->user->profile->character_name }}</p>
                 <p class="text-white">Location: {{ $order->location->name }} </p>
             </div>
@@ -25,7 +25,7 @@
                         @if (count($sellOrders))
                             @foreach ($sellOrders as $order)
                                 <tr>
-                                    <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->item->name }}</a></td>
+                                    <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
                                     <td>{{ $order->location->name }}</td>
                                     <td>{{ $order->type }}</td>
                                     <td class="text-right">{{ number_format($order->quantity) }}</td>
@@ -64,7 +64,7 @@
                         @if (count($buyOrders))
                             @foreach ($buyOrders as $order)
                                 <tr>
-                                    <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->item->name }}</a></td>
+                                    <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
                                     <td>{{ $order->location->name }}</td>
                                     <td>{{ $order->type }}</td>
                                     <td class="text-right">{{ number_format($order->quantity) }}</td>

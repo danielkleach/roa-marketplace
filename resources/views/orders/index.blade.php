@@ -21,7 +21,7 @@
 <div>
     @foreach ($orders as $order)
         <div>
-            <h2>{{ $order->item->name }}</h2>
+            <h2>{!! $order->item->name !!}</h2>
             <p>{{ $order->type }}</p>
             <p>{{ $order->quantity }}</p>
             <p>{{ $order->price }}</p>
