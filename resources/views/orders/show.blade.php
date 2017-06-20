@@ -30,7 +30,7 @@
                                     <td>{{ $order->type }}</td>
                                     <td class="text-right">{{ number_format($order->quantity) }}</td>
                                     <td class="text-right">{{ number_format($order->price) }}G</td>
-                                    <td>{{ $order->formattedDate }}</td>
+                                    <td>{{ $order->start_date }}</td>
                                 </tr>
                             @endforeach
                         @else
@@ -69,7 +69,7 @@
                                     <td>{{ $order->type }}</td>
                                     <td class="text-right">{{ number_format($order->quantity) }}</td>
                                     <td class="text-right">{{ number_format($order->price) }}G</td>
-                                    <td>{{ $order->formattedDate }}</td>
+                                    <td>{{ $order->start_date }}</td>
                                 </tr>
                             @endforeach
                         @else
