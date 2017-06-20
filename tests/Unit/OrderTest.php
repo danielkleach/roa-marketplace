@@ -28,14 +28,14 @@ class OrderTest extends TestCase
             'type' => 'Sell',
             'quantity' => 20,
             'price' => 500,
-            'start_date' => Carbon::now(),
-            'end_date' => Carbon::now()->addDays(3)
+            'start_date' => Carbon::now()->toDateTimeString(),
+            'end_date' => Carbon::now()->addDays(3)->toDateTimeString()
         ];
 
         $response = $this->actingAs($user)
             ->postJson("/orders", $data);
 
-        $response->assertStatus(200);
+        $response->assertStatus(302);
         $this->assertDatabaseHas('orders', $data);
     }
 
