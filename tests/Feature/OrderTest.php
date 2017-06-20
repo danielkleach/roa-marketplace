@@ -13,7 +13,7 @@ class OrderTest extends TestCase
 {
     use DatabaseTransactions;
 
-    public function test_user_can_view_all_orders()
+    public function test_it_can_view_all_orders()
     {
         $orders = factory(Order::class, 5)->create();
 
@@ -29,7 +29,7 @@ class OrderTest extends TestCase
         }
     }
 
-    public function test_user_can_view_an_order()
+    public function test_it_can_view_an_order()
     {
         $order = factory(Order::class)->create();
 

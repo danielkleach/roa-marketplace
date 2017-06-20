@@ -11,7 +11,7 @@ class LocationTest extends TestCase
 {
     use DatabaseTransactions;
 
-    public function test_user_can_view_all_locations()
+    public function test_it_can_view_all_locations()
     {
         $user = factory(User::class)->create();
 
@@ -27,7 +27,7 @@ class LocationTest extends TestCase
         }
     }
 
-    public function test_user_can_view_a_location()
+    public function test_it_can_view_a_location()
     {
         $user = factory(User::class)->create();
 

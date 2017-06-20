@@ -11,7 +11,7 @@ class ItemTest extends TestCase
 {
     use DatabaseTransactions;
 
-    public function test_user_can_view_all_items()
+    public function test_it_can_view_all_items()
     {
         $items = factory(Item::class, 5)->create();
 
@@ -26,7 +26,7 @@ class ItemTest extends TestCase
         }
     }
 
-    public function test_user_can_view_an_item()
+    public function test_it_can_view_an_item()
     {
         $item = factory(Item::class)->create();
 

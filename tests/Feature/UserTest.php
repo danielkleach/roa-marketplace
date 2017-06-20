@@ -10,7 +10,7 @@ class UserTest extends TestCase
 {
     use DatabaseTransactions;
 
-    public function test_user_can_view_all_Users()
+    public function test_it_can_view_all_Users()
     {
         $users = factory(User::class, 5)->create();
 
@@ -23,7 +23,7 @@ class UserTest extends TestCase
         }
     }
 
-    public function test_user_can_view_a_user()
+    public function test_it_can_view_a_user()
     {
         $user = factory(User::class)->create([
             'email' => 'test@test.com',

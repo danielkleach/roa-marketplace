@@ -11,7 +11,7 @@ class ProfileTest extends TestCase
 {
     use DatabaseTransactions;
 
-    public function test_user_can_view_all_user_profiles()
+    public function test_it_can_view_all_user_profiles()
     {
         $users = factory(User::class, 5)->create()->each(function ($user) {
             factory(Profile::class)->create([
@@ -31,7 +31,7 @@ class ProfileTest extends TestCase
         }
     }
 
-    public function test_user_can_view_a_user_profile()
+    public function test_it_can_view_a_user_profile()
     {
         $user = factory(User::class)->create();
 
