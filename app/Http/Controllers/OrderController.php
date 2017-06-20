@@ -66,8 +66,7 @@ class OrderController extends Controller
             'end_date' => Carbon::now()->addDays(3)->toDateTimeString()
         ]);
 
-        return redirect()->route('profiles.show', ['id' => Auth::user()->profile->id])
-            ->with('message', 'Your order has been created.');
+        return redirect()->back()->with('message', 'Your order has been created.');
     }
 
     /**
