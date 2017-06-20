@@ -19,12 +19,12 @@
                         @foreach ($latestSellOrders as $order)
                             <tr>
                                 <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->id }}</a></td>
-                                <td><a href="{{ route('items.show', $order->item->id) }}">{{ $order->item->name }}</a></td>
+                                <td><a href="{{ route('items.show', $order->item->id) }}">{!! $order->item->name !!}</a></td>
                                 <td><a href="{{ route('profiles.show', $order->user->id) }}">{{ $order->user->profile->character_name }}</a></td>
                                 <td>{{ $order->location->name }}</td>
                                 <td class="text-right">{{ number_format($order->quantity) }}</td>
                                 <td class="text-right">{{ number_format($order->price) }}G</td>
-                                <td class="text-right">{{ $order->formattedDate }}</td>
+                                <td class="text-right">{{ $order->start_date }}</td>
                             </tr>
                         @endforeach
                     </table>
@@ -46,12 +46,12 @@
                         @foreach ($latestBuyOrders as $order)
                             <tr>
                                 <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->id }}</a></td>
-                                <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->item->name }}</a></td>
+                                <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
                                 <td><a href="{{ route('users.show', $order->user->id) }}">{{ $order->user->profile->character_name }}</a></td>
                                 <td>{{ $order->location->name }}</td>
                                 <td class="text-right">{{ number_format($order->quantity) }}</td>
                                 <td class="text-right">{{ number_format($order->price) }}G</td>
-                                <td class="text-right">{{ $order->formattedDate }}</td>
+                                <td class="text-right">{{ $order->start_date }}</td>
                             </tr>
                         @endforeach
                     </table>
