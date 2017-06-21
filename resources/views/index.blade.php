@@ -47,7 +47,7 @@
                             <tr>
                                 <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->id }}</a></td>
                                 <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
-                                <td><a href="{{ route('users.show', $order->user->id) }}">{{ $order->user->profile->character_name }}</a></td>
+                                <td><a href="{{ route('profiles.show', $order->user->id) }}">{{ $order->user->profile->character_name }}</a></td>
                                 <td>{{ $order->location->name }}</td>
                                 <td class="text-right">{{ number_format($order->quantity) }}</td>
                                 <td class="text-right">{{ number_format($order->price) }}G</td>
