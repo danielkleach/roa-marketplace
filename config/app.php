@@ -182,7 +182,9 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
 
-        AlgoliaSearch\Laravel\AlgoliaServiceProvider::class
+        AlgoliaSearch\Laravel\AlgoliaServiceProvider::class,
+
+        Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
 
     ],
 
@@ -235,6 +237,8 @@ return [
 
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        'Sentry' => Sentry\SentryLaravel\SentryFacade::class,
 
     ],
 
