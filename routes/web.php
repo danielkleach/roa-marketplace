@@ -15,7 +15,7 @@ Auth::routes();
 
 Route::get('/', ['as' => 'home.index', 'uses' => 'HomeController@index']);
 
-Route::resource('users', 'UserController');
+//Route::resource('users', 'UserController');
 Route::resource('profiles', 'ProfileController');
 Route::resource('items', 'ItemController');
 Route::resource('locations', 'LocationController');
