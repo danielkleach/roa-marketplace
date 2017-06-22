@@ -23,6 +23,7 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
 }
 
 a {
@@ -38,7 +39,9 @@ table {
 }
 
 tr th, tr td {
-    padding: 10px;
+    text-align: left;
+    padding: 10px 15px;
+    border: 1px solid $color-gray;
 }
 
 a:hover, a:active {
