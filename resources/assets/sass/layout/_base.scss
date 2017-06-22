@@ -1,0 +1,61 @@
+/************************************************************
+ *
+ * Base
+ *
+ ************************************************************/
+
+html {
+    background: #000000;
+}
+
+body {
+    //background: url("bg.png") no-repeat center top fixed;
+    color: $color-black;
+    font-size: 14px;
+    font-family: 'Lato', 'Open Sans', sans-serif;
+}
+
+main {
+    margin: 0 auto;
+    padding: 0 40px;
+    max-width: 1200px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: $color-red;
+}
+
+table {
+    background-color: $color-white;
+    border-radius: 3px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tr th, tr td {
+    padding: 10px;
+}
+
+a:hover, a:active {
+    text-decoration: underline;
+    color: $color-dark-red;
+}
+
+.container {
+    @include clearfix;
+    padding: 0 40px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+
+}

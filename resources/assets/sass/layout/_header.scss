@@ -1,0 +1,51 @@
+/************************************************************
+ *
+ * Header
+ *
+ ************************************************************/
+
+header {
+    padding: 10px 0;
+    background-color: $color-dark-red;
+}
+
+.logo {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    margin-right: 40px;
+    font-family: 'Metamorphous', cursive;
+}
+
+.logo:hover {
+    color: $color-white;
+    text-decoration: none;
+}
+
+.nav {
+    line-height: 2rem;
+}
+
+.nav > li {
+    display: inline-block;
+}
+
+.nav > li a {
+    text-decoration: none;
+    color: $color-gray;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.nav > li a:hover {
+    color: $color-white;
+}
+
+.nav-left > li {
+    margin-right: 15px;
+}
+
+.nav-right > li {
+    margin-left: 15px;
+}

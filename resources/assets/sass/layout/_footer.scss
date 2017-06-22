@@ -1,0 +1,19 @@
+/************************************************************
+ *
+ * Footer
+ *
+ ************************************************************/
+
+footer {
+    padding: 15px 0;
+    color: $color-gray;
+    background-color: $color-dark-red;
+}
+
+.disclaimer, .copyright {
+    padding-bottom: 5px;
+
+    @include media-query(tab) {
+        text-align: left;
+    };
+}

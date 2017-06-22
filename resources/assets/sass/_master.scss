@@ -13,15 +13,25 @@
 @import "requirements/animate/animate";
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Metamorphous|Open+Sans:400,700|Roboto:400,700');
+@import url('https://fonts.googleapis.com/css?family=Metamorphous|Lato:400,700|Open+Sans:400,700|Roboto:400,700');
 
 // Generic
 @import "generic/box-sizing";
 @import "generic/reset";
 
 // Base
-@import "base/headings";
-@import "base/links";
+@import "base/defaults";
+@import "base/grid";
+@import "base/breakpoints";
+@import "base/colors";
+@import "base/forms";
+
+// Mixins
+@import "tools/mixins";
+@import "tools/helpers";
 
 // Pages
-
+@import "layout/base";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/search";
