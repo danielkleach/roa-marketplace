@@ -44,7 +44,7 @@ tr th, tr td {
     border: 1px solid $color-gray;
 }
 
-a:hover, a:active {
+a:hover, a:active, a:focus {
     text-decoration: underline;
     color: $color-dark-red;
 }
@@ -70,4 +70,13 @@ a:hover, a:active {
     color: $color-white;
     background-color: $color-dark-red;
     text-align: center;
+}
+
+.dropdown-menu {
+    background-color: $color-dark-red;
+    color: $color-gray;
+    border: 1px solid $color-black;
+    border-radius: 3px;
+    box-shadow: none;
+    padding: 5px;
 }
