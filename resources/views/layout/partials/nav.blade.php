@@ -1,9 +1,9 @@
-<nav class="container">
+<nav class="wrapper">
     <a class="logo pull-left" href="{{ route('home.index') }}">ROA Marketplace</a>
-    <ul class="nav nav-left pull-left">
+    <ul class="nav pull-left">
         <li><a href="{{ route('orders.create') }}">Buy/Sell</a></li>
     </ul>
-    <ul class="nav nav-right pull-right">
+    <ul class="nav pull-right">
         @if (Auth::guest())
             <li><a href="{{ route('register') }}">Register</a></li>
             <li><a href="{{ route('login') }}">Login</a></li>

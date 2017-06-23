@@ -2,8 +2,8 @@
 
 @section('content')
     <div>
-        <h4 class="text-white">Latest Sell Orders</h4>
-        <table class="table table-bordered">
+        <h4>Latest Sell Orders</h4>
+        <table class="table">
             <tr>
                 <th>Order</th>
                 <th>Item</th>
@@ -27,8 +27,8 @@
         </table>
     </div>
     <div>
-        <h4 class="text-white">Latest Buy Orders</h4>
-        <table class="table table-bordered">
+        <h4>Latest Buy Orders</h4>
+        <table class="table">
             <tr>
                 <th>Order</th>
                 <th>Item</th>
