@@ -7,14 +7,14 @@
  *
  ************************************************************/
 
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Metamorphous|Lato:400,700|Open+Sans:400,700|Roboto:400,700');
+
 // Requirements
 @import "requirements/font-awesome/scss/font-awesome";
 @import "requirements/bootstrap/bootstrap";
 @import "requirements/bootstrap-select/bootstrap-select";
 @import "requirements/animate/animate";
-
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Metamorphous|Lato:400,700|Open+Sans:400,700|Roboto:400,700');
 
 // Generic
 @import "generic/box-sizing";
@@ -27,11 +27,11 @@
 @import "base/colors";
 @import "base/forms";
 
-// Mixins
+// Tools
 @import "tools/mixins";
 @import "tools/helpers";
 
-// Pages
+// Layout
 @import "layout/base";
 @import "layout/header";
 @import "layout/footer";

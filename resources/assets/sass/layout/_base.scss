@@ -27,13 +27,16 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.6;
 }
 
+p {
+    padding-bottom: 10px;
+}
+
 a {
     text-decoration: none;
     color: $color-red;
 }
 
 table {
-    background-color: $color-white;
     border-radius: 3px;
     border-collapse: collapse;
     border-spacing: 0;
@@ -50,7 +53,7 @@ a:hover, a:active {
     color: $color-dark-red;
 }
 
-.container {
+.wrapper {
     @include clearfix;
     padding: 0 40px;
     margin: 0 auto;

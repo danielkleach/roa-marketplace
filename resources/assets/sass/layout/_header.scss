@@ -36,16 +36,10 @@ header {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 12px;
+    padding: 10px;
 }
 
 .nav > li a:hover {
     color: $color-white;
-}
-
-.nav-left > li {
-    margin-right: 15px;
-}
-
-.nav-right > li {
-    margin-left: 15px;
+    background: none !important;
 }
