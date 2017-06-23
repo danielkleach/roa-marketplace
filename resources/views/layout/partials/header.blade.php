@@ -12,6 +12,8 @@
 <header>
     @include('layout.partials.nav')
 </header>
+@include('layout.partials.search')
+@include('layout.partials.search-results')
 <main>
     @if ( session('message') )
         <div class="alert alert-success alert-dismissable">
@@ -24,5 +26,3 @@
             <p>{{ session('error', '') }}</p>
         </div>
 @endif
-@include('layout.partials.search')
-@include('layout.partials.search-results')

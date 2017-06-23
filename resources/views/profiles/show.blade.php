@@ -1,142 +1,121 @@
 @extends('layout.master')
 
 @section('content')
-    <main>
-        <div class="row">
-            <div class="col-md-4 info-block">
-                <h3 class="text-white">{{ $profile->character_name }}</h3>
-                <p class="text-white">{{ $profile->race }}</p>
+    <div class="row">
+        <div class="col-md-4 info-block">
+            <h3 class="text-white">{{ $profile->character_name }}</h3>
+            <p class="text-white">{{ $profile->race }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-white">Sell Orders</h4>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Item</th>
+                        <th>Location</th>
+                        <th class="text-right">Quantity</th>
+                        <th class="text-right">Price Each</th>
+                        <th class="text-right">Created</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                    @if (count($sellOrders))
+                        @foreach ($sellOrders as $order)
+                            <tr>
+                                <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
+                                <td>{{ $order->location->name }}</td>
+                                <td class="text-right">{{ number_format($order->quantity) }}</td>
+                                <td class="text-right">{{ number_format($order->price) }}G</td>
+                                <td class="text-right">{{ $order->start_date }}</td>
+                                <td class="text-center">
+                                    @if (Auth::user() && (Auth::user()->id == $order->user_id))
+                                        <button type="button" class="btn btn-danger" data-id="{{ $order->id }}" onclick="closeOrder(this)">Close Order</button>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td class="text-center" colspan="6">This user has no active sell orders.</td>
+                        </tr>
+                    @endif
+                </table>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h4 class="text-white">Sell Orders</h4>
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>Item</th>
-                            <th>Location</th>
-                            <th class="text-right">Quantity</th>
-                            <th class="text-right">Price Each</th>
-                            <th class="text-right">Created</th>
-                            <th class="text-center">Actions</th>
-                        </tr>
-                        @if (count($sellOrders))
-                            @foreach ($sellOrders as $order)
-                                <tr>
-                                    <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
-                                    <td>{{ $order->location->name }}</td>
-                                    <td class="text-right">{{ number_format($order->quantity) }}</td>
-                                    <td class="text-right">{{ number_format($order->price) }}G</td>
-                                    <td class="text-right">{{ $order->start_date }}</td>
-                                    @if (Auth::user() && (Auth::user()->id == $order->user_id))
-                                        <td class="text-center"><button type="button" class="btn btn-danger" data-id="{{ $order->id }}" onclick="closeOrder(this)">Close Order</button></td>
-                                    @endif
-                                </tr>
-                            @endforeach
-                        @else
+        <div class="col-md-12">
+            <h4 class="text-white">Buy Orders</h4>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Item</th>
+                        <th>Location</th>
+                        <th class="text-right">Quantity</th>
+                        <th class="text-right">Price Each</th>
+                        <th class="text-right">Created</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                    @if (count($buyOrders))
+                        @foreach ($buyOrders as $order)
                             <tr>
-                                <td class="text-center" colspan="6">This user has no active sell orders.</td>
-                            </tr>
-                        @endif
-                        <tr>
-                            <th>Item</th>
-                            <th>Location</th>
-                            <th class="text-right">Quantity</th>
-                            <th class="text-right">Price Each</th>
-                            <th class="text-right">Created</th>
-                            <th class="text-center">Actions</th>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <h4 class="text-white">Buy Orders</h4>
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>Item</th>
-                            <th>Location</th>
-                            <th class="text-right">Quantity</th>
-                            <th class="text-right">Price Each</th>
-                            <th class="text-right">Created</th>
-                            <th class="text-center">Actions</th>
-                        </tr>
-                        @if (count($buyOrders))
-                            @foreach ($buyOrders as $order)
-                                <tr>
-                                    <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
-                                    <td>{{ $order->location->name }}</td>
-                                    <td class="text-right">{{ number_format($order->quantity) }}</td>
-                                    <td class="text-right">{{ number_format($order->price) }}G</td>
-                                    <td class="text-right">{{ $order->start_date }}</td>
+                                <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
+                                <td>{{ $order->location->name }}</td>
+                                <td class="text-right">{{ number_format($order->quantity) }}</td>
+                                <td class="text-right">{{ number_format($order->price) }}G</td>
+                                <td class="text-right">{{ $order->start_date }}</td>
+                                <td class="text-center">
                                     @if (Auth::user() && (Auth::user()->id == $order->user_id))
-                                        <td class="text-center"><button type="button" class="btn btn-danger" data-id="{{ $order->id }}" onclick="closeOrder(this)">Close Order</button></td>
+                                        <button type="button" class="btn btn-danger" data-id="{{ $order->id }}" onclick="closeOrder(this)">Close Order</button>
                                     @endif
-                                </tr>
-                            @endforeach
-                        @else
-                            <tr>
-                                <td class="text-center" colspan="6">This user has no active buy orders.</td>
+                                </td>
                             </tr>
-                        @endif
+                        @endforeach
+                    @else
                         <tr>
-                            <th>Item</th>
-                            <th>Location</th>
-                            <th class="text-right">Quantity</th>
-                            <th class="text-right">Price Each</th>
-                            <th class="text-right">Created</th>
-                            <th class="text-center">Actions</th>
+                            <td class="text-center" colspan="6">This user has no active buy orders.</td>
                         </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <h4 class="text-white">Expired Orders</h4>
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>Item</th>
-                            <th>Type</th>
-                            <th>Location</th>
-                            <th class="text-right">Quantity</th>
-                            <th class="text-right">Price Each</th>
-                            <th class="text-right">Expired</th>
-                            <th class="text-center">Actions</th>
-                        </tr>
-                        @if (count($expiredOrders))
-                            @foreach ($expiredOrders as $order)
-                                <tr>
-                                    <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
-                                    <td>{{ $order->type }}</td>
-                                    <td>{{ $order->location->name }}</td>
-                                    <td class="text-right">{{ number_format($order->quantity) }}</td>
-                                    <td class="text-right">{{ number_format($order->price) }}G</td>
-                                    @if (Auth::user() && (Auth::user()->id == $order->user_id))
-                                    <td class="text-right">{{ $order->end_date }}</td>
-                                        <td class="text-center"><button type="button" class="btn btn-primary" data-id="{{ $order->id }}" onclick="refreshOrder(this)">Refresh Order</button></td>
-                                    @endif
-                                </tr>
-                            @endforeach
-                        @else
-                            <tr>
-                                <td class="text-center" colspan="7">This user has no expired orders.</td>
-                            </tr>
-                        @endif
-                        <tr>
-                            <th>Item</th>
-                            <th>Type</th>
-                            <th>Location</th>
-                            <th class="text-right">Quantity</th>
-                            <th class="text-right">Price Each</th>
-                            <th class="text-right">Expired</th>
-                            <th class="text-center">Actions</th>
-                        </tr>
-                    </table>
-                </div>
+                    @endif
+                </table>
             </div>
         </div>
-    </main>
+        <div class="col-md-12">
+            <h4 class="text-white">Expired Orders</h4>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Item</th>
+                        <th>Type</th>
+                        <th>Location</th>
+                        <th class="text-right">Quantity</th>
+                        <th class="text-right">Price Each</th>
+                        <th class="text-right">Expired</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                    @if (count($expiredOrders))
+                        @foreach ($expiredOrders as $order)
+                            <tr>
+                                <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
+                                <td>{{ $order->type }}</td>
+                                <td>{{ $order->location->name }}</td>
+                                <td class="text-right">{{ number_format($order->quantity) }}</td>
+                                <td class="text-right">{{ number_format($order->price) }}G</td>
+                                <td class="text-right">{{ $order->end_date }}</td>
+                                <td class="text-center">
+                                    @if (Auth::user() && (Auth::user()->id == $order->user_id))
+                                        <button type="button" class="btn btn-primary" data-id="{{ $order->id }}" onclick="refreshOrder(this)">Refresh Order</button>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td class="text-center" colspan="7">This user has no expired orders.</td>
+                        </tr>
+                    @endif
+                </table>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('scripts')
