@@ -4,10 +4,6 @@
  *
  ************************************************************/
 
-html {
-    background: #000000;
-}
-
 body {
     //background: url("bg.png") no-repeat center top fixed;
     color: $color-black;
@@ -68,4 +64,10 @@ a:hover, a:active {
 
 .info-block {
     margin-bottom: 40px;
+}
+
+.panel-default > .panel-heading {
+    color: $color-white;
+    background-color: $color-dark-red;
+    text-align: center;
 }
