@@ -2,18 +2,6 @@
  * Helpers
  ****************************************/
 
-.pull-left {
-    float: left;
-}
-
-.pull-right {
-    float: right;
-}
-
-.text-white {
-    color: $color-white;
-}
-
 .text-left {
     text-align: left;
 }
@@ -24,4 +12,14 @@
 
 .text-center {
     text-align: center;
+}
+
+.btn-blood {
+    color: $color-black;
+    background: $color-white;
+    border: 1px solid $color-gray;
+}
+
+.btn-blood:hover {
+    color: $color-red;
 }
