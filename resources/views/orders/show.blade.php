@@ -3,17 +3,17 @@
 @section('content')
     <div class="row">
         <div class="col-xs-12 info-block">
-            <h3 class="text-white">Order #{{ $order->id }} - {!! $order->item->name !!}</h3>
-            <p class="text-white">{{ $order->user->profile->character_name }}</p>
-            <p class="text-white">Location: {{ $order->location->name }} </p>
+            <h3>Order #{{ $order->id }} - {!! $order->item->name !!}</h3>
+            <p>{{ $order->user->profile->character_name }}</p>
+            <p>Location: {{ $order->location->name }} </p>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <h4 class="text-white">Sell Orders By This User</h4>
+            <h4 class="latest">Sell Orders By This User</h4>
             <div class="table-responsive">
                 <table class="table table-bordered">
-                    <tr>
+                    <tr class="table-head">
                         <th>Item</th>
                         <th>Location</th>
                         <th>Type</th>
@@ -24,12 +24,14 @@
                     @if (count($sellOrders))
                         @foreach ($sellOrders as $order)
                             <tr>
-                                <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
-                                <td>{{ $order->location->name }}</td>
-                                <td>{{ $order->type }}</td>
-                                <td class="text-right">{{ number_format($order->quantity) }}</td>
-                                <td class="text-right">{{ number_format($order->price) }}G</td>
-                                <td>{{ $order->start_date }}</td>
+                                <td>
+                                    <a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a>
+                                </td>
+                                <td><span class="mobile-description">Order Type:</span>{{ $order->type }}</td>
+                                <td><span class="mobile-description">Location:</span>{{ $order->location->name }}</td>
+                                <td><span class="mobile-description">Quantity:</span>{{ number_format($order->quantity) }}</td>
+                                <td><span class="mobile-description">Price Each:</span>{{ number_format($order->price) }}G</td>
+                                <td><span class="mobile-description">Order Closed:</span>{{ $order->end_date }}</td>
                             </tr>
                         @endforeach
                     @else
@@ -41,10 +43,10 @@
             </div>
         </div>
         <div class="col-md-12">
-            <h4 class="text-white">Buy Orders By This User</h4>
+            <h4 class="latest">Buy Orders By This User</h4>
             <div class="table-responsive">
                 <table class="table table-bordered">
-                    <tr>
+                    <tr class="table-head">
                         <th>Item</th>
                         <th>Location</th>
                         <th>Type</th>
@@ -55,12 +57,14 @@
                     @if (count($buyOrders))
                         @foreach ($buyOrders as $order)
                             <tr>
-                                <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
-                                <td>{{ $order->location->name }}</td>
-                                <td>{{ $order->type }}</td>
-                                <td class="text-right">{{ number_format($order->quantity) }}</td>
-                                <td class="text-right">{{ number_format($order->price) }}G</td>
-                                <td>{{ $order->start_date }}</td>
+                                <td>
+                                    <a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a>
+                                </td>
+                                <td><span class="mobile-description">Order Type:</span>{{ $order->type }}</td>
+                                <td><span class="mobile-description">Location:</span>{{ $order->location->name }}</td>
+                                <td><span class="mobile-description">Quantity:</span>{{ number_format($order->quantity) }}</td>
+                                <td><span class="mobile-description">Price Each:</span>{{ number_format($order->price) }}G</td>
+                                <td><span class="mobile-description">Order Closed:</span>{{ $order->end_date }}</td>
                             </tr>
                         @endforeach
                     @else
