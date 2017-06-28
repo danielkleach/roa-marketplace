@@ -40,12 +40,8 @@
 }
 
 .aa-input-search {
-    border: 1px solid rgba(228, 228, 228, 0.6);
+    border: 1px solid $color-dark-red;
     padding: 8px 28px 8px 12px;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
 }
 
 .aa-input-search::-webkit-search-decoration,
@@ -72,16 +68,15 @@
         right: 16px;
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
-        fill: #e4e4e4;
+        fill: $color-white;
     };
 }
 
 .aa-dropdown-menu {
-    background-color: #fff;
-    border: 1px solid rgba(228, 228, 228, 0.6);
+    background-color: $color-white;
+    border: 1px solid $color-dark-red;
     border-top: none;
     width: 100%;
-    box-sizing: border-box;
 }
 
 .aa-suggestion {

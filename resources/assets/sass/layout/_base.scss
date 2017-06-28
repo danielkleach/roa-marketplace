@@ -25,6 +25,7 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
 }
 
 p {
@@ -79,6 +80,94 @@ a:hover, a:active, a:focus {
 
     @include media-query(tab-and-up) {
         margin-bottom: 40px;
+    };
+}
+
+.table tr {
+    margin-bottom: 10px;
+
+    @include media-query(tab-and-up) {
+        margin-bottom: 0;
+    };
+}
+
+.table tbody tr td {
+    border: none;
+    padding: 2px;
+
+    @include media-query(lap-and-up) {
+        border: 1px solid $color-gray;
+        padding: 8px;
+    };
+}
+
+.table tr td {
+    display: block;
+    border: none;
+
+    @include media-query(lap-and-up) {
+        display: table-cell;
+        border: 1px solid $color-gray;
+    };
+}
+
+.table tr td:first-child {
+    background-color: $color-dark-red;
+    font-weight: 700;
+    padding: 5px;
+
+    @include media-query(lap-and-up) {
+        background-color: $color-white;
+        font-weight: normal;
+        padding: 8px;
+    };
+}
+
+.table tr td:first-child a {
+    color: $color-white;
+    cursor: pointer;
+
+    @include media-query(lap-and-up) {
+        color: $color-red;
+    };
+}
+
+.table tr td:last-child {
+    padding-bottom: 20px;
+
+    @include media-query(lap-and-up) {
+        padding-bottom: 8px;
+    };
+}
+
+.table-head {
+    display: none;
+
+    @include media-query(lap-and-up) {
+        display: table-row;
+    };
+}
+
+.latest {
+    text-align: center;
+    background-color: $color-black;
+    color: $color-white;
+    padding: 10px 0;
+
+    @include media-query(lap-and-up) {
+        text-align: left;
+        background-color: $color-white;
+        color: $color-black;
+        padding: 0;
+    };
+}
+
+.mobile-description {
+    display: inline-block;
+    width: 120px;
+
+    @include media-query(lap-and-up) {
+        display: none;
     };
 }
 

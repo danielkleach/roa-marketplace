@@ -10,10 +10,25 @@ footer {
     background-color: $color-dark-red;
 }
 
-.disclaimer, .copyright {
-    padding-bottom: 5px;
+.disclaimer {
+    float: none;
 
-    @include media-query(tab) {
+    @include media-query(tab-and-up) {
+        float: left;
         text-align: left;
     };
+}
+
+.copyright {
+    float: none;
+
+    @include media-query(tab-and-up) {
+        float: right;
+        text-align: right;
+    };
+}
+
+.disclaimer, .copyright {
+    padding-bottom: 5px;
+    text-align: center;
 }
