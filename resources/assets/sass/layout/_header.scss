@@ -10,11 +10,15 @@ header {
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 20px;
     color: white;
     text-decoration: none;
     margin-right: 20px;
     font-family: 'Metamorphous', cursive;
+
+    @include media-query(tab-and-up) {
+        font-size: 24px;
+    };
 }
 
 .logo:hover {
@@ -22,8 +26,45 @@ header {
     text-decoration: none;
 }
 
+#navbar {
+    padding-top: 10px;
+
+    @include media-query(tab-and-up) {
+        padding-top: 0;
+    };
+}
+
+.navbar-toggle {
+    border: 1px solid $color-white;
+    border-radius: 1px;
+    margin: 0;
+    padding: 7px 8px;
+
+}
+
+.navbar-toggle .icon-bar {
+    background-color: $color-white;
+    width: 15px;
+    height: 1px;
+}
+
+.navbar-collapse {
+    padding: 0;
+    border-top: none;
+    box-shadow: none;
+}
+
+.navbar-collapse.in {
+    overflow-y: visible;
+}
+
 .nav {
+    width: 100%;
     line-height: 2.3rem;
+
+    @include media-query(tab-and-up) {
+        width: auto;
+    };
 }
 
 .nav .open a,
@@ -35,16 +76,23 @@ header {
 }
 
 .nav > li {
-    display: inline-block;
+    display: block;
+
+    @include media-query(tab-and-up) {
+        display: inline-block;
+    };
 }
 
 .nav > li a {
+    padding: 5px 0;
     text-decoration: none;
     color: $color-gray;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 12px;
-    padding: 5px 10px;
+    @include media-query(tab-and-up) {
+        padding: 5px 10px;
+    };
 }
 
 .nav > li a:hover, .nav > li a:focus {

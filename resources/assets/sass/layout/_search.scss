@@ -4,7 +4,96 @@
  *
  ************************************************************/
 
-#search-input {
-    margin: 40px auto;
-    width: 300px;
+#aa-search-input {
+    width: 100%;
+
+    @include media-query(tab-and-up) {
+        width: 320px;
+    };
+}
+
+.search-container {
+    margin: 0 0 20px;
+    padding: 10px;
+    background-color: $color-black;
+    text-align: left;
+
+    @include media-query(tab-and-up) {
+        margin: 0 auto 40px;
+        padding: 5px 0;
+        text-align: center;
+    };
+}
+
+.aa-input-container {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+
+    @include media-query(tab-and-up) {
+        width: 320px;
+    };
+}
+
+.algolia-autocomplete {
+    width: 100%;
+}
+
+.aa-input-search {
+    border: 1px solid rgba(228, 228, 228, 0.6);
+    padding: 8px 28px 8px 12px;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.aa-input-search::-webkit-search-decoration,
+.aa-input-search::-webkit-search-cancel-button,
+.aa-input-search::-webkit-search-results-button,
+.aa-input-search::-webkit-search-results-decoration {
+    display: none;
+}
+
+.aa-suggestion > span:first-child em, .aa-suggestion > span:last-child em {
+    font-weight: 700;
+    font-style: normal;
+    color: $color-dark-red;
+    padding: 2px 0 2px 2px; }
+
+.aa-input-icon {
+    display: none;
+
+    @include media-query(tab-and-up) {
+        height: 16px;
+        width: 16px;
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        fill: #e4e4e4;
+    };
+}
+
+.aa-dropdown-menu {
+    background-color: #fff;
+    border: 1px solid rgba(228, 228, 228, 0.6);
+    border-top: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.aa-suggestion {
+    padding: 8px 12px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.aa-suggestion + .aa-suggestion {
+    border-top: 1px solid rgba(228, 228, 228, 0.6);
+}
+
+.aa-suggestion:hover, .aa-suggestion.aa-cursor {
+    background-color: rgba(241, 241, 241, 0.35);
 }

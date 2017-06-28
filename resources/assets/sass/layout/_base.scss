@@ -12,15 +12,19 @@ body {
 }
 
 main {
-    margin: 0 auto;
-    padding: 0 40px;
+    margin: 0 auto 10px;
+    padding: 0 10px;
     min-height: 600px;
     max-width: 1200px;
+
+    @include media-query(tab-and-up) {
+        margin: 0 auto 40px;
+        padding: 0 40px;
+    };
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
 }
 
 p {
@@ -51,19 +55,39 @@ a:hover, a:active, a:focus {
 
 .wrapper {
     @include clearfix;
-    padding: 0 40px;
+    padding: 0 10px;
     margin: 0 auto;
     max-width: 1200px;
+
+    @include media-query(tab-and-up) {
+        padding: 0 40px;
+    };
+}
+
+.heading {
+    margin-top: 40px;
+
+    @include media-query(lap-and-up) {
+        margin-top: 0;
+    };
 }
 
 .table {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+
+    @include media-query(tab-and-up) {
+        margin-bottom: 40px;
+    };
 }
 
 .info-block {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+
+    @include media-query(tab-and-up) {
+        margin-bottom: 40px;
+    };
 }
 
 .panel-default > .panel-heading {
@@ -72,11 +96,71 @@ a:hover, a:active, a:focus {
     text-align: center;
 }
 
+.alert {
+    padding: 10px 40px;
+}
+
+.alert p {
+    padding-bottom: 0;
+}
+
+.alert-dismissable .close {
+    right: 0;
+}
+
+.btn-default,
+.btn-default:hover,
+.btn-default:active,
+.btn-default:focus {
+    background-color: $color-white;
+}
+
+.open > .btn-default.dropdown-toggle,
+.open > .btn-default.dropdown-toggle:hover,
+.open > .btn-default.dropdown-toggle:active,
+.open > .btn-default.dropdown-toggle:focus {
+    background-color: $color-white;
+}
+
+.bootstrap-select .dropdown-toggle:focus {
+    outline: 0 !important;
+}
+
 .dropdown-menu {
-    background-color: $color-dark-red;
-    color: $color-gray;
+    position: static;
+    color: $color-dark-red;
     border: 1px solid $color-black;
     border-radius: 3px;
     box-shadow: none;
     padding: 5px;
+
+    @include media-query(tab-and-up) {
+        position: absolute;
+    };
+}
+
+.dropdown-menu > .active > a,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:active {
+    background-color: $color-red;
+    color: $color-white;
+}
+
+.dropdown-menu.-nav {
+    background-color: $color-dark-red;
+    color: $color-gray;
+    box-shadow: none;
+    border: none;
+
+    @include media-query(tab-and-up) {
+        border: 1px solid $color-black;
+        border-radius: 3px;
+        padding: 5px;
+    };
+}
+
+.dropdown-menu.-nav > .active > a  {
+    background-color: $color-white;
+    color: $color-black;
 }
