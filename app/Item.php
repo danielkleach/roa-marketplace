@@ -3,11 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
 
 class Item extends Model
 {
-    use AlgoliaEloquentTrait;
+    use SoftDeletes, AlgoliaEloquentTrait;
 
     public static $perEnvironment = true;
 
