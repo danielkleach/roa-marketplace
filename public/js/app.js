@@ -89,55 +89,18 @@ __webpack_require__(2);
 /* 2 */
 /***/ (function(module, exports) {
 
-var orders = instantsearch({
-    appId: 'QBCO0MN350',
-    apiKey: algoliaKey,
-    indexName: 'orders_' + environment,
-    urlSync: true,
-    searchFunction: function searchFunction(helper) {
-        var searchResults = $('#search-results');
-        var query = orders.helper.state.query;
-        if (query === '') {
-            searchResults.hide();
-            return;
-        }
-        helper.search();
-        searchResults.show();
-    }
-});
+var client = algoliasearch("QBCO0MN350", algoliaKey);
+var index = client.initIndex('items_' + environment);
 
-var orderHits = instantsearch.widgets.hits({
-    container: '#order-hits',
-    hitsPerPage: 10,
+autocomplete('#aa-search-input', { hint: false }, {
+    source: autocomplete.sources.hits(index, { hitsPerPage: 5 }),
+    displayKey: 'name',
     templates: {
-        item: getTemplate('order-hit'),
-        empty: getTemplate('order-no-results')
+        suggestion: function suggestion(_suggestion) {
+            return '<span><a href="/items/' + _suggestion.id + '">' + _suggestion._highlightResult.name.value + '</a></span>';
+        }
     }
 });
-//var orderPagination = instantsearch.widgets.pagination({
-//    container: '#order-pagination'
-//});
-
-var orderStats = instantsearch.widgets.stats({
-    container: '#order-stats'
-});
-
-var searchBox = instantsearch.widgets.searchBox({
-    container: '#search-input',
-    placeholder: 'Search for something..'
-});
-
-orders.addWidget(orderHits);
-//orders.addWidget(orderPagination);
-orders.addWidget(orderStats);
-
-orders.addWidget(searchBox);
-
-orders.start();
-
-function getTemplate(templateName) {
-    return document.getElementById(templateName + '-template').innerHTML;
-}
 
 /***/ }),
 /* 3 */
