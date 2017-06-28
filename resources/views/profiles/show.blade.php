@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-4 info-block">
+        <div class="col-xs-12 info-block">
             <h3 class="text-white">{{ $profile->character_name }}</h3>
             <p class="text-white">{{ $profile->race }}</p>
         </div>

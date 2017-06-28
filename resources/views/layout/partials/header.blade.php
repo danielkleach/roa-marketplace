@@ -12,9 +12,6 @@
 <header>
     @include('layout.partials.nav')
 </header>
-@include('layout.partials.search')
-@include('layout.partials.search-results')
-<main>
     @if ( session('message') )
         <div class="alert alert-success alert-dismissable">
             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
@@ -25,4 +22,6 @@
             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
             <p>{{ session('error', '') }}</p>
         </div>
-@endif
+    @endif
+@include('layout.partials.search')
+<main>

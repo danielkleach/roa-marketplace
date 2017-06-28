@@ -9,7 +9,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-<script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/algoliasearch/3.24.0/algoliasearch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.28.2/autocomplete.min.js"></script>
 <script>
     var algoliaKey = '{{ config('app.algolia_key') }}';
     var environment = '{{ config('app.env') }}';
