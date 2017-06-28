@@ -39,7 +39,7 @@
                         @endforeach
                     @else
                         <tr>
-                            <td class="text-center" colspan="6">This user has no active sell orders.</td>
+                            <td class="text-center no-results" colspan="6">This user has no active sell orders.</td>
                         </tr>
                     @endif
                 </table>
@@ -76,7 +76,7 @@
                         @endforeach
                     @else
                         <tr>
-                            <td class="text-center" colspan="6">This user has no active buy orders.</td>
+                            <td class="text-center no-results" colspan="6">This user has no active buy orders.</td>
                         </tr>
                     @endif
                 </table>
@@ -115,7 +115,7 @@
                         @endforeach
                     @else
                         <tr>
-                            <td class="text-center" colspan="7">This user has no expired orders.</td>
+                            <td class="text-center no-results" colspan="7">This user has no expired orders.</td>
                         </tr>
                     @endif
                 </table>
