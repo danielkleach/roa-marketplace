@@ -171,6 +171,14 @@ a:hover, a:active, a:focus {
     };
 }
 
+.table tr td:first-child.no-results {
+    background-color: $color-white;
+    color: $color-black;
+    vertical-align: middle;
+    padding: 20px 0;
+    font-weight: normal;
+}
+
 .info-block {
     margin-bottom: 20px;
 
