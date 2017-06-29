@@ -11,17 +11,17 @@
     <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav pull-left">
             <li><a href="{{ route('orders.create') }}">Buy/Sell</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    Services <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu -nav" role="menu">
-                    <li>
-                        <a href="#">Siege Help</a>
-                        <a href="#">Item Gathering</a>
-                    </li>
-                </ul>
-            </li>
+            {{--<li class="dropdown">--}}
+                {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">--}}
+                    {{--Services <span class="caret"></span>--}}
+                {{--</a>--}}
+                {{--<ul class="dropdown-menu -nav" role="menu">--}}
+                    {{--<li>--}}
+                        {{--<a href="#">Siege Help</a>--}}
+                        {{--<a href="#">Item Gathering</a>--}}
+                    {{--</li>--}}
+                {{--</ul>--}}
+            {{--</li>--}}
         </ul>
         <ul class="nav pull-right">
             @if (Auth::guest())
