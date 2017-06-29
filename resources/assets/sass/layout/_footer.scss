@@ -1,0 +1,34 @@
+/************************************************************
+ *
+ * Footer
+ *
+ ************************************************************/
+
+footer {
+    padding: 15px 0;
+    color: $color-gray;
+    background-color: $color-dark-red;
+}
+
+.disclaimer {
+    float: none;
+
+    @include media-query(tab-and-up) {
+        float: left;
+        text-align: left;
+    };
+}
+
+.copyright {
+    float: none;
+
+    @include media-query(tab-and-up) {
+        float: right;
+        text-align: right;
+    };
+}
+
+.disclaimer, .copyright {
+    padding-bottom: 5px;
+    text-align: center;
+}

@@ -17,6 +17,8 @@ class OrderController extends Controller
 
     public function __construct(Order $order, Item $item, Location $location)
     {
+        $this->middleware('auth', ['except' => ['index','show']]);
+
         $this->order = $order;
         $this->item = $item;
         $this->location = $location;

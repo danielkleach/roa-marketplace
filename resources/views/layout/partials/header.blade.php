@@ -9,24 +9,19 @@
     <link href="/css/app.css" rel="stylesheet">
 </head>
 <body>
+<header>
     @include('layout.partials.nav')
-    <div class="row">
-        @if ( session('message') )
-            <div class="alert alert-success alert-dismissable">
-                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                <p>{{ session('message', '') }}</p>
-            </div>
-        @elseif ( session('error') )
-            <div class="alert alert-danger alert-dismissable">
-                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                <p>{{ session('error', '') }}</p>
-            </div>
-        @endif
-    </div>
-    <div class="wrapper">
-        @include('layout.partials.search-results')
-        <header>
-            <h1 class="text-center">Rise of Agon</h1>
-            {{--<img class="logo" src="/images/logo.png">--}}
-            <h2 class="text-center">Marketplace</h2>
-        </header>
+</header>
+    @if ( session('message') )
+        <div class="alert alert-success alert-dismissable">
+            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+            <p>{{ session('message', '') }}</p>
+        </div>
+    @elseif ( session('error') )
+        <div class="alert alert-danger alert-dismissable">
+            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+            <p>{{ session('error', '') }}</p>
+        </div>
+    @endif
+@include('layout.partials.search')
+<main>
