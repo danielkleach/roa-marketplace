@@ -83,7 +83,7 @@ __webpack_require__(2);
 /* 1 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: ENOENT: no such file or directory, open '/Users/Daniel/code/roa-marketplace/resources/assets/sass/_master.scss'\n    at runLoaders (/Users/Daniel/code/roa-marketplace/node_modules/webpack/lib/NormalModule.js:192:19)\n    at /Users/Daniel/code/roa-marketplace/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /Users/Daniel/code/roa-marketplace/node_modules/loader-runner/lib/LoaderRunner.js:200:19\n    at /Users/Daniel/code/roa-marketplace/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:62:14\n    at _combinedTickCallback (internal/process/next_tick.js:73:7)\n    at process._tickCallback (internal/process/next_tick.js:104:9)");
 
 /***/ }),
 /* 2 */
