@@ -14,15 +14,15 @@
             <div class="row">
                 <div class="form-group col-sm-6">
                     {!! Form::label('Buying or Selling?') !!}
-                    {!! Form::select('type', ['Buy' => 'Buying', 'Sell' => 'Selling'], null, ['class' => 'selectpicker', 'placeholder' => ' ']) !!}
+                    {!! Form::select('type', ['Buy' => 'Buying', 'Sell' => 'Selling'], null, ['class' => 'selectpicker form-control', 'placeholder' => ' ']) !!}
                 </div>
                 <div class="form-group col-sm-6">
                     {!! Form::label('Location') !!}
-                    {!! Form::select('location_id', $locations, null, ['class' => 'selectpicker']) !!}
+                    {!! Form::select('location_id', $locations, null, ['class' => 'selectpicker form-control']) !!}
                 </div>
                 <div class="form-group col-sm-6">
                     {!! Form::label('Item') !!}
-                    {!! Form::select('item_id', $items, null, ['class' => 'selectpicker', 'data-live-search' => "true"]) !!}
+                    {!! Form::select('item_id', $items, null, ['class' => 'selectpicker form-control', 'data-live-search' => "true"]) !!}
                 </div>
                 <div class="form-group col-sm-6">
                     {!! Form::label('Quantity') !!}
