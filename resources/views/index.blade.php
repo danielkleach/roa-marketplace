@@ -12,6 +12,7 @@
                 <th>Price Each</th>
                 <th>Created</th>
             </tr>
+            @if (count($latestSellOrders))
             @foreach ($latestSellOrders as $order)
                 <tr>
                     <td>
@@ -27,6 +28,11 @@
                     <td><span class="mobile-description">Order Placed:</span>{{ $order->start_date }}</td>
                 </tr>
             @endforeach
+            @else
+                <tr>
+                    <td class="text-center no-results" colspan="6">There are currently no active sell orders.</td>
+                </tr>
+            @endif
         </table>
     </div>
     <div>
@@ -40,6 +46,7 @@
                 <th>Price Each</th>
                 <th>Created</th>
             </tr>
+            @if (count($latestBuyOrders))
             @foreach ($latestBuyOrders as $order)
                 <tr>
                     <td>
@@ -55,6 +62,11 @@
                     <td><span class="mobile-description">Order Placed:</span>{{ $order->start_date }}</td>
                 </tr>
             @endforeach
+            @else
+                <tr>
+                    <td class="text-center no-results" colspan="6">There are currently no active buy orders.</td>
+                </tr>
+            @endif
         </table>
     </div>
 @endsection
