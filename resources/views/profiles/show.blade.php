@@ -2,41 +2,6 @@
 
 @section('content')
     <div class="row">
-        <div class="col-xs-12 info-block">
-            <h3>{{ $profile->character_name }}</h3>
-            <p>{{ $profile->race }}</p>
-        </div>
-<<<<<<< HEAD
-        <div class="row">
-            <div class="col-md-12">
-                <h4 class="text-white">Sell Orders</h4>
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>Item</th>
-                            <th>Location</th>
-                            <th class="text-right">Quantity</th>
-                            <th class="text-right">Price Each</th>
-                            <th class="text-right">Created</th>
-                            <th class="text-center">Actions</th>
-                        </tr>
-                        @if (count($sellOrders))
-                            @foreach ($sellOrders as $order)
-                                <tr>
-                                    <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
-                                    <td>{{ $order->location->name }}</td>
-                                    <td class="text-right">{{ number_format($order->quantity) }}</td>
-                                    <td class="text-right">{{ number_format($order->price) }}G</td>
-                                    <td class="text-right">{{ $order->start_date }}</td>
-                                    @if (Auth::user() && (Auth::user()->id == $order->user_id))
-                                        <td class="text-center"><button type="button" class="btn btn-danger" data-id="{{ $order->id }}" onclick="closeOrder(this)">Close Order</button></td>
-                                    @endif
-                                </tr>
-                            @endforeach
-                        @else
-=======
-    </div>
-    <div class="row">
         <div class="col-md-12">
             <h4 class="latest">Sell Orders</h4>
             <div class="table-responsive">
@@ -51,7 +16,6 @@
                     </tr>
                     @if (count($sellOrders))
                         @foreach ($sellOrders as $order)
->>>>>>> 1294684b88d36910162a201e1657b4ffd3ab18bb
                             <tr>
                                 <td>
                                     <a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a>
@@ -74,34 +38,6 @@
                     @endif
                 </table>
             </div>
-<<<<<<< HEAD
-            <div class="col-md-12">
-                <h4 class="text-white">Buy Orders</h4>
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>Item</th>
-                            <th>Location</th>
-                            <th class="text-right">Quantity</th>
-                            <th class="text-right">Price Each</th>
-                            <th class="text-right">Created</th>
-                            <th class="text-center">Actions</th>
-                        </tr>
-                        @if (count($buyOrders))
-                            @foreach ($buyOrders as $order)
-                                <tr>
-                                    <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
-                                    <td>{{ $order->location->name }}</td>
-                                    <td class="text-right">{{ number_format($order->quantity) }}</td>
-                                    <td class="text-right">{{ number_format($order->price) }}G</td>
-                                    <td class="text-right">{{ $order->start_date }}</td>
-                                    @if (Auth::user() && (Auth::user()->id == $order->user_id))
-                                        <td class="text-center"><button type="button" class="btn btn-danger" data-id="{{ $order->id }}" onclick="closeOrder(this)">Close Order</button></td>
-                                    @endif
-                                </tr>
-                            @endforeach
-                        @else
-=======
         </div>
         <div class="col-md-12">
             <h4 class="latest">Buy Orders</h4>
@@ -117,7 +53,6 @@
                     </tr>
                     @if (count($buyOrders))
                         @foreach ($buyOrders as $order)
->>>>>>> 1294684b88d36910162a201e1657b4ffd3ab18bb
                             <tr>
                                 <td>
                                     <a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a>
@@ -140,36 +75,6 @@
                     @endif
                 </table>
             </div>
-<<<<<<< HEAD
-            <div class="col-md-12">
-                <h4 class="text-white">Expired Orders</h4>
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>Item</th>
-                            <th>Type</th>
-                            <th>Location</th>
-                            <th class="text-right">Quantity</th>
-                            <th class="text-right">Price Each</th>
-                            <th class="text-right">Expired</th>
-                            <th class="text-center">Actions</th>
-                        </tr>
-                        @if (count($expiredOrders))
-                            @foreach ($expiredOrders as $order)
-                                <tr>
-                                    <td><a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a></td>
-                                    <td>{{ $order->type }}</td>
-                                    <td>{{ $order->location->name }}</td>
-                                    <td class="text-right">{{ number_format($order->quantity) }}</td>
-                                    <td class="text-right">{{ number_format($order->price) }}G</td>
-                                    <td class="text-right">{{ $order->end_date }}</td>
-                                    @if (Auth::user() && (Auth::user()->id == $order->user_id))
-                                        <td class="text-center"><button type="button" class="btn btn-primary" data-id="{{ $order->id }}" onclick="refreshOrder(this)">Refresh Order</button></td>
-                                    @endif
-                                </tr>
-                            @endforeach
-                        @else
-=======
         </div>
         <div class="col-md-12">
             <h4 class="latest">Expired Orders</h4>
@@ -186,7 +91,6 @@
                     </tr>
                     @if (count($expiredOrders))
                         @foreach ($expiredOrders as $order)
->>>>>>> 1294684b88d36910162a201e1657b4ffd3ab18bb
                             <tr>
                                 <td>
                                     <a href="{{ route('orders.show', $order->id) }}">{!! $order->item->name !!}</a>
