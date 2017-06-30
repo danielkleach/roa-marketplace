@@ -106,6 +106,14 @@ a:hover, a:active, a:focus {
     };
 }
 
+.table tbody tr td button {
+    margin-top: 10px;
+
+    @include media-query(lap-and-up) {
+        margin-top: 0;
+    };
+}
+
 .table tr td {
     display: block;
     border: none;
