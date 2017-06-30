@@ -9,9 +9,14 @@ body {
     color: $color-black;
     font-size: 14px;
     font-family: 'Lato', 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh
 }
 
 main {
+    flex: 1;
+    width: 100%;
     margin: 0 auto 10px;
     padding: 0 10px;
     min-height: 600px;
