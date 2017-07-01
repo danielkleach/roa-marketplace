@@ -412,5 +412,187 @@ class CommonItemSeeder extends Seeder
             'image' => '/materials/moderate-mana-potion.png',
             'rarity' => 'Common',
         ]);
+
+        Item::create([
+            'name' => 'Studded Armguards',
+            'description' => '',
+            'image' => '/materials/studded-armguards.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Studded Cuirass',
+            'description' => '',
+            'image' => '/materials/studded-cuirass.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Studded Elbow Guards',
+            'description' => '',
+            'image' => '/materials/studded-elbow-guards.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Studded Girdle',
+            'description' => '',
+            'image' => '/materials/studded-girdle.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Studded Greaves',
+            'description' => '',
+            'image' => '/materials/studded-greaves.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Studded Leggings',
+            'description' => '',
+            'image' => '/materials/studded-leggings.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Studded Shoulder Pads',
+            'description' => '',
+            'image' => '/materials/studded-shoulder-pads.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Studded (Full Set)',
+            'description' => '',
+            'image' => '/materials/studded-set.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Bone Breastplate',
+            'description' => '',
+            'image' => '/materials/bone-breastplate.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Bone Elbow Guards',
+            'description' => '',
+            'image' => '/materials/bone-elbow-guards.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Bone Girdle',
+            'description' => '',
+            'image' => '/materials/bone-girdle.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Bone Greaves',
+            'description' => '',
+            'image' => '/materials/bone-greaves.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Bone Vambraces',
+            'description' => '',
+            'image' => '/materials/bone-vambraces.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Bone Leggings',
+            'description' => '',
+            'image' => '/materials/bone-leggings.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Bone Helmet',
+            'description' => '',
+            'image' => '/materials/bone-helmet.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Bone Shoulder Guards',
+            'description' => '',
+            'image' => '/materials/bone-shoulder-guards.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Bone (Full Set)',
+            'description' => '',
+            'image' => '/materials/bone-set.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Hastestaff',
+            'description' => '',
+            'image' => '/materials/hastestaff.png',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Eradan',
+            'description' => '',
+            'image' => '',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Death Pig',
+            'description' => '',
+            'image' => '',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Horse',
+            'description' => '',
+            'image' => '',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Shulgan Drake',
+            'description' => '',
+            'image' => '',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Tribeland Bear',
+            'description' => '',
+            'image' => '',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Garmir',
+            'description' => '',
+            'image' => '',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Bluetail Runner',
+            'description' => '',
+            'image' => '',
+            'rarity' => 'Common',
+        ]);
+
+        Item::create([
+            'name' => 'Battlehorn',
+            'description' => '',
+            'image' => '',
+            'rarity' => 'Common',
+        ]);
     }
 }
