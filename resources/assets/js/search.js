@@ -9,6 +9,7 @@ autocomplete('#aa-search-input',
             suggestion: function(suggestion) {
                 return '<span><a href="/items/' + suggestion.id + '">' +
                     suggestion._highlightResult.name.value + '</a></span>'
-            }
+            },
+            footer: '<span>Search by <img src="/images/algolia.jpg" width="40px" height="40px" alt="Algolia logo"></span>'
         }
     });
