@@ -11,3 +11,4 @@ npm-debug.log
 .env
 *.css
 /public/css/app.css
+/public/js/app.js
