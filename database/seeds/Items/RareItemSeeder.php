@@ -351,9 +351,9 @@ class RareItemSeeder extends Seeder
         ]);
 
         Item::create([
-            'name' => 'Cephalod Ink',
+            'name' => 'Cephalopod Ink',
             'description' => '',
-            'image' => '/materials/cephalod-ink.png',
+            'image' => '/materials/cephalopod-ink.png',
             'rarity' => 'Rare',
         ]);
 
@@ -361,6 +361,405 @@ class RareItemSeeder extends Seeder
             'name' => 'Flatsedge',
             'description' => '',
             'image' => '/materials/flatsedge.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Full Plate Boots',
+            'description' => '',
+            'image' => '/materials/full-plate-boots.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Full Plate Cuirass',
+            'description' => '',
+            'image' => '/materials/full-plate-cuirass.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Full Plate Couters',
+            'description' => '',
+            'image' => '/materials/full-plate-couters.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Full Plate Gauntlets',
+            'description' => '',
+            'image' => '/materials/full-plate-gauntlets.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Full Plate Girdle',
+            'description' => '',
+            'image' => '/materials/full-plate-girdle.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Full Plate Greaves',
+            'description' => '',
+            'image' => '/materials/full-plate-greaves.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Full Plate Vambraces',
+            'description' => '',
+            'image' => '/materials/full-plate-vambraces.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Full Plate Leggings',
+            'description' => '',
+            'image' => '/materials/full-plate-leggings.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Full Plate Helm',
+            'description' => '',
+            'image' => '/materials/full-plate-helm.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Full Plate Gloves',
+            'description' => '',
+            'image' => '/materials/full-plate-gloves.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Full Plate (Full Set)',
+            'description' => '',
+            'image' => '/materials/full-plate-set.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Infernal Boots',
+            'description' => '',
+            'image' => '/materials/infernal-boots.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Infernal Cuirass',
+            'description' => '',
+            'image' => '/materials/infernal-cuirass.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Infernal Couters',
+            'description' => '',
+            'image' => '/materials/infernal-couters.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Infernal Gauntlets',
+            'description' => '',
+            'image' => '/materials/infernal-gauntlets.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Infernal Girdle',
+            'description' => '',
+            'image' => '/materials/infernal-girdle.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Infernal Greaves',
+            'description' => '',
+            'image' => '/materials/infernal-greaves.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Infernal Vambraces',
+            'description' => '',
+            'image' => '/materials/infernal-vambraces.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Infernal Leggings',
+            'description' => '',
+            'image' => '/materials/infernal-leggings.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Infernal Helm',
+            'description' => '',
+            'image' => '/materials/infernal-helm.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Infernal Gloves',
+            'description' => '',
+            'image' => '/materials/infernal-gloves.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Infernal (Full Set)',
+            'description' => '',
+            'image' => '/materials/infernal-set.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Demon\'s Ember',
+            'description' => '',
+            'image' => '/materials/demons-ember.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Marilis',
+            'description' => '',
+            'image' => '/materials/marilis.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Omrog',
+            'description' => '',
+            'image' => '/materials/omrog.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Orthus',
+            'description' => '',
+            'image' => '/materials/orthus.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Scorpio',
+            'description' => '',
+            'image' => '/materials/scorpio.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Ymotsbane',
+            'description' => '',
+            'image' => '/materials/ymotsbane.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Heavy War Club',
+            'description' => '',
+            'image' => '/materials/heavy-war-club.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Spirit Club',
+            'description' => '',
+            'image' => '/materials/spirit-club.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Executioner\'s Axe',
+            'description' => '',
+            'image' => '/materials/executioners-axe.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Knothar',
+            'description' => '',
+            'image' => '/materials/knothar.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Revenant Double-Bladed Axe',
+            'description' => '',
+            'image' => '/materials/revenant-double-bladed-axe.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Headcrusher',
+            'description' => '',
+            'image' => '/materials/headcrusher.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Peoplecrusher',
+            'description' => '',
+            'image' => '/materials/peoplecrusher.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Thorgrim',
+            'description' => '',
+            'image' => '/materials/thorgrim.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Deepblade',
+            'description' => '',
+            'image' => '/materials/deepblade.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Justicebringer',
+            'description' => '',
+            'image' => '/materials/justicebringer.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Mercian Flamberge',
+            'description' => '',
+            'image' => '/materials/mercian-flamberge.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Mahirim Hunting Daggers',
+            'description' => '',
+            'image' => '/materials/mahirim-hunting-daggers.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Mercian Twin Dirks',
+            'description' => '',
+            'image' => '/materials/mercian-twin-dirks.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Mirdain Halfblades',
+            'description' => '',
+            'image' => '/materials/mirdain-halfblades.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Pole Hammer',
+            'description' => '',
+            'image' => '/materials/pole-hammer.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Ripper',
+            'description' => '',
+            'image' => '/materials/ripper.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Spetum',
+            'description' => '',
+            'image' => '/materials/spetum.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Composite Bow',
+            'description' => '',
+            'image' => '/materials/composite-bow.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Warbow',
+            'description' => '',
+            'image' => '/materials/warbow.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Gravesong',
+            'description' => '',
+            'image' => '/materials/gravesong.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Darkscepter',
+            'description' => '',
+            'image' => '/materials/darkscepter.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Lightstealer',
+            'description' => '',
+            'image' => '/materials/lightstealer.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Rebirth',
+            'description' => '',
+            'image' => '/materials/rebirth.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Snakesight',
+            'description' => '',
+            'image' => '/materials/snakesight.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Sortiledge',
+            'description' => '',
+            'image' => '/materials/sortiledge.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Amaranthine',
+            'description' => '',
+            'image' => '/materials/amaranthine.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Dark Gorgon',
+            'description' => '',
+            'image' => '/materials/dark-gorgon.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Lightcatcher Omen',
+            'description' => '',
+            'image' => '/materials/lightcatcher-omen.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Orkish Boomstick',
+            'description' => '',
+            'image' => '/materials/orkish-boomstick.png',
             'rarity' => 'Rare',
         ]);
     }

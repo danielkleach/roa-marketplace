@@ -98,7 +98,8 @@ autocomplete('#aa-search-input', { hint: false }, {
     templates: {
         suggestion: function suggestion(_suggestion) {
             return '<span><a href="/items/' + _suggestion.id + '">' + _suggestion._highlightResult.name.value + '</a></span>';
-        }
+        },
+        footer: '<span>Search by <img src="/images/algolia.jpg" width="40px" height="40px" alt="Algolia logo"></span>'
     }
 });
 
