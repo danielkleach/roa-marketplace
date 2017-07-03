@@ -14,6 +14,15 @@
     text-align: center;
 }
 
+.btn-danger {
+    color: $color-white;
+    background-color: $color-red;
+}
+
+.btn-danger:hover {
+    background-color: $color-dark-red;
+}
+
 .btn-blood {
     color: $color-black;
     background: $color-white;
