@@ -18,5 +18,6 @@ class ItemSeeder extends Seeder
         $this->call(RareItemSeeder::class);
         $this->call(UltraRareItemSeeder::class);
         $this->call(EnchantingItemSeeder::class);
+        $this->call(FoodItemSeeder::class);
     }
 }

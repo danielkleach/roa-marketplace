@@ -29,6 +29,69 @@ class UltraRareItemSeeder extends Seeder
         ]);
 
         Item::create([
+            'name' => 'Hellbore Garden',
+            'description' => '',
+            'image' => '/materials/hellbore-garden.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Chaos Station',
+            'description' => '',
+            'image' => '/materials/chaos-station.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Snakeweed Garden',
+            'description' => '',
+            'image' => '/materials/snakeweed-garden.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Silver Birch',
+            'description' => '',
+            'image' => '/materials/silver-birch.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Game Time Token',
+            'description' => '',
+            'image' => '/materials/game-time-token.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Bronze Slot Machine',
+            'description' => '',
+            'image' => '/materials/bronze-slot-machine.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Silver Slot Machine',
+            'description' => '',
+            'image' => '/materials/silver-slot-machine.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Gold Slot Machine',
+            'description' => '',
+            'image' => '/materials/gold-slot-machine.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => '',
+            'description' => '',
+            'image' => '/materials/',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
             'name' => 'Dragon Boots',
             'description' => '',
             'image' => '/materials/dragon-boots.png',
@@ -389,6 +452,76 @@ class UltraRareItemSeeder extends Seeder
             'name' => 'Corpsecall',
             'description' => '',
             'image' => '/materials/corpsecall.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Cottage Deed',
+            'description' => '',
+            'image' => '/materials/cottage-deed.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'House Deed',
+            'description' => '',
+            'image' => '/materials/house-deed.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Villa Deed',
+            'description' => '',
+            'image' => '/materials/villa-deed.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Large Villa Deed',
+            'description' => '',
+            'image' => '/materials/large-villa-deed.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Keep Deed',
+            'description' => '',
+            'image' => '/materials/keep-deed.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Guest Room Furniture',
+            'description' => '',
+            'image' => '/materials/guest-room-furniture.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Seed Wood',
+            'description' => '',
+            'image' => '/materials/seed-wood.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Mandrake Garden',
+            'description' => '',
+            'image' => '/materials/mandrake-garden.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Oven',
+            'description' => '',
+            'image' => '/materials/oven.png',
+            'rarity' => 'Ultra-Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Workbench',
+            'description' => '',
+            'image' => '/materials/workbench.png',
             'rarity' => 'Ultra-Rare',
         ]);
     }

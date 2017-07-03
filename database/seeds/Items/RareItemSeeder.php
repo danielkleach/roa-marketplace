@@ -762,5 +762,19 @@ class RareItemSeeder extends Seeder
             'image' => '/materials/orkish-boomstick.png',
             'rarity' => 'Rare',
         ]);
+
+        Item::create([
+            'name' => 'Orb of Might',
+            'description' => '',
+            'image' => '/materials/orb-of-might.png',
+            'rarity' => 'Rare',
+        ]);
+
+        Item::create([
+            'name' => 'Orb of Dominion',
+            'description' => '',
+            'image' => '/materials/orb-of-dominion.png',
+            'rarity' => 'Rare',
+        ]);
     }
 }
