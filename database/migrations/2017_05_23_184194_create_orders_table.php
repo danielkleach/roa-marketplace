@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->integer('location_id')->unsigned();
             $table->enum('type', ['Buy', 'Sell']);
             $table->integer('quantity')->unsigned();
-            $table->integer('price')->unsigned();
+            $table->float('price', 8, 2);
             $table->dateTime('start_date');
             $table->dateTime('end_date');
 
