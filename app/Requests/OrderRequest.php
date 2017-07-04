@@ -29,7 +29,7 @@ class OrderRequest extends Request
                     ],
                     'price' => [
                         'required',
-                        'numeric'
+                        'regex:/^\d*(\.\d{1,2})?$/'
                     ]
                 ];
             case 'PATCH':
@@ -47,7 +47,7 @@ class OrderRequest extends Request
                     'price' => [
                         'sometimes',
                         'required',
-                        'numeric'
+                        'regex:/^\d*(\.\d{1,2})?$/'
                     ]
                 ];
             default:
