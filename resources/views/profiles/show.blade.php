@@ -20,7 +20,7 @@
                         </td>
                         <td><span class="mobile-description">Location:</span>{{ $order->location->name }}</td>
                         <td><span class="mobile-description">Quantity:</span>{{ number_format($order->quantity) }}</td>
-                        <td><span class="mobile-description">Price Each:</span>{{ number_format($order->price) }}G</td>
+                        <td><span class="mobile-description">Price Each:</span>{{ rtrim(rtrim(number_format($order->price, 2, ".", ""), '0'), '.') }}G</td>
                         <td><span class="mobile-description">Order Placed:</span>{{ $order->start_date }}</td>
                         <td class="text-center">
                             @if (Auth::user() && (Auth::user()->id == $order->user_id))
@@ -55,7 +55,7 @@
                         </td>
                         <td><span class="mobile-description">Location:</span>{{ $order->location->name }}</td>
                         <td><span class="mobile-description">Quantity:</span>{{ number_format($order->quantity) }}</td>
-                        <td><span class="mobile-description">Price Each:</span>{{ number_format($order->price) }}G</td>
+                        <td><span class="mobile-description">Price Each:</span>{{ rtrim(rtrim(number_format($order->price, 2, ".", ""), '0'), '.') }}G</td>
                         <td><span class="mobile-description">Order Placed:</span>{{ $order->start_date }}</td>
                         <td class="text-center">
                             @if (Auth::user() && (Auth::user()->id == $order->user_id))
@@ -92,7 +92,7 @@
                         <td><span class="mobile-description">Order Type:</span>{{ $order->type }}</td>
                         <td><span class="mobile-description">Location:</span>{{ $order->location->name }}</td>
                         <td><span class="mobile-description">Quantity:</span>{{ number_format($order->quantity) }}</td>
-                        <td><span class="mobile-description">Price Each:</span>{{ number_format($order->price) }}G</td>
+                        <td><span class="mobile-description">Price Each:</span>{{ rtrim(rtrim(number_format($order->price, 2, ".", ""), '0'), '.') }}G</td>
                         <td><span class="mobile-description">Order Closed:</span>{{ $order->end_date }}</td>
                         <td class="text-center">
                             @if (Auth::user() && (Auth::user()->id == $order->user_id))
